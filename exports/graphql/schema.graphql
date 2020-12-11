@@ -41,16 +41,553 @@ type UserPermissionsPasswordPayload {
   ok: Boolean!
 }
 
+type CleanBeauty {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  Organic(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Vegan(sort: String, limit: Int, start: Int, where: JSON): [Products]
+}
+
+type CleanBeautyConnection {
+  values: [CleanBeauty]
+  groupBy: CleanBeautyGroupBy
+  aggregate: CleanBeautyAggregator
+}
+
+type CleanBeautyAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CleanBeautyGroupBy {
+  id: [CleanBeautyConnectionId]
+  created_at: [CleanBeautyConnectionCreated_at]
+  updated_at: [CleanBeautyConnectionUpdated_at]
+  published_at: [CleanBeautyConnectionPublished_at]
+}
+
+type CleanBeautyConnectionId {
+  key: ID
+  connection: CleanBeautyConnection
+}
+
+type CleanBeautyConnectionCreated_at {
+  key: DateTime
+  connection: CleanBeautyConnection
+}
+
+type CleanBeautyConnectionUpdated_at {
+  key: DateTime
+  connection: CleanBeautyConnection
+}
+
+type CleanBeautyConnectionPublished_at {
+  key: DateTime
+  connection: CleanBeautyConnection
+}
+
+input CleanBeautyInput {
+  Organic: [ID]
+  Vegan: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCleanBeautyInput {
+  Organic: [ID]
+  Vegan: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createCleanBeautyInput {
+  data: CleanBeautyInput
+}
+
+type createCleanBeautyPayload {
+  cleanBeauty: CleanBeauty
+}
+
+input updateCleanBeautyInput {
+  where: InputID
+  data: editCleanBeautyInput
+}
+
+type updateCleanBeautyPayload {
+  cleanBeauty: CleanBeauty
+}
+
+input deleteCleanBeautyInput {
+  where: InputID
+}
+
+type deleteCleanBeautyPayload {
+  cleanBeauty: CleanBeauty
+}
+
+type Gender {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  men(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  uni(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  women(sort: String, limit: Int, start: Int, where: JSON): [Gender]
+}
+
+type GenderConnection {
+  values: [Gender]
+  groupBy: GenderGroupBy
+  aggregate: GenderAggregator
+}
+
+type GenderAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type GenderGroupBy {
+  id: [GenderConnectionId]
+  created_at: [GenderConnectionCreated_at]
+  updated_at: [GenderConnectionUpdated_at]
+  published_at: [GenderConnectionPublished_at]
+}
+
+type GenderConnectionId {
+  key: ID
+  connection: GenderConnection
+}
+
+type GenderConnectionCreated_at {
+  key: DateTime
+  connection: GenderConnection
+}
+
+type GenderConnectionUpdated_at {
+  key: DateTime
+  connection: GenderConnection
+}
+
+type GenderConnectionPublished_at {
+  key: DateTime
+  connection: GenderConnection
+}
+
+input GenderInput {
+  men: [ID]
+  uni: [ID]
+  women: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editGenderInput {
+  men: [ID]
+  uni: [ID]
+  women: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createGenderInput {
+  data: GenderInput
+}
+
+type createGenderPayload {
+  gender: Gender
+}
+
+input updateGenderInput {
+  where: InputID
+  data: editGenderInput
+}
+
+type updateGenderPayload {
+  gender: Gender
+}
+
+input deleteGenderInput {
+  where: InputID
+}
+
+type deleteGenderPayload {
+  gender: Gender
+}
+
+type Herren {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  Dufte(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Rasur(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Bart(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Pflege(sort: String, limit: Int, start: Int, where: JSON): [Products]
+}
+
+type HerrenConnection {
+  values: [Herren]
+  groupBy: HerrenGroupBy
+  aggregate: HerrenAggregator
+}
+
+type HerrenAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type HerrenGroupBy {
+  id: [HerrenConnectionId]
+  created_at: [HerrenConnectionCreated_at]
+  updated_at: [HerrenConnectionUpdated_at]
+  published_at: [HerrenConnectionPublished_at]
+}
+
+type HerrenConnectionId {
+  key: ID
+  connection: HerrenConnection
+}
+
+type HerrenConnectionCreated_at {
+  key: DateTime
+  connection: HerrenConnection
+}
+
+type HerrenConnectionUpdated_at {
+  key: DateTime
+  connection: HerrenConnection
+}
+
+type HerrenConnectionPublished_at {
+  key: DateTime
+  connection: HerrenConnection
+}
+
+input HerrenInput {
+  Dufte: [ID]
+  Rasur: [ID]
+  Bart: [ID]
+  Pflege: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editHerrenInput {
+  Dufte: [ID]
+  Rasur: [ID]
+  Bart: [ID]
+  Pflege: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createHerrenInput {
+  data: HerrenInput
+}
+
+type createHerrenPayload {
+  herren: Herren
+}
+
+input updateHerrenInput {
+  where: InputID
+  data: editHerrenInput
+}
+
+type updateHerrenPayload {
+  herren: Herren
+}
+
+input deleteHerrenInput {
+  where: InputID
+}
+
+type deleteHerrenPayload {
+  herren: Herren
+}
+
+type Livestyyle {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  Trinkflaschen(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Makeup_Etuis(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Korperbursten(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Kerzen(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Fur_Mutter(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Nahrungserganzungsmittel(sort: String, limit: Int, start: Int, where: JSON): [Products]
+}
+
+type LivestyyleConnection {
+  values: [Livestyyle]
+  groupBy: LivestyyleGroupBy
+  aggregate: LivestyyleAggregator
+}
+
+type LivestyyleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type LivestyyleGroupBy {
+  id: [LivestyyleConnectionId]
+  created_at: [LivestyyleConnectionCreated_at]
+  updated_at: [LivestyyleConnectionUpdated_at]
+  published_at: [LivestyyleConnectionPublished_at]
+}
+
+type LivestyyleConnectionId {
+  key: ID
+  connection: LivestyyleConnection
+}
+
+type LivestyyleConnectionCreated_at {
+  key: DateTime
+  connection: LivestyyleConnection
+}
+
+type LivestyyleConnectionUpdated_at {
+  key: DateTime
+  connection: LivestyyleConnection
+}
+
+type LivestyyleConnectionPublished_at {
+  key: DateTime
+  connection: LivestyyleConnection
+}
+
+input LivestyyleInput {
+  Trinkflaschen: [ID]
+  Makeup_Etuis: [ID]
+  Korperbursten: [ID]
+  Kerzen: [ID]
+  Fur_Mutter: [ID]
+  Nahrungserganzungsmittel: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editLivestyyleInput {
+  Trinkflaschen: [ID]
+  Makeup_Etuis: [ID]
+  Korperbursten: [ID]
+  Kerzen: [ID]
+  Fur_Mutter: [ID]
+  Nahrungserganzungsmittel: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createLivestyyleInput {
+  data: LivestyyleInput
+}
+
+type createLivestyylePayload {
+  livestyyle: Livestyyle
+}
+
+input updateLivestyyleInput {
+  where: InputID
+  data: editLivestyyleInput
+}
+
+type updateLivestyylePayload {
+  livestyyle: Livestyyle
+}
+
+input deleteLivestyyleInput {
+  where: InputID
+}
+
+type deleteLivestyylePayload {
+  livestyyle: Livestyyle
+}
+
+type Menu {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  INTERIER(sort: String, limit: Int, start: Int, where: JSON): [Gender]
+  LIFESTYLE(sort: String, limit: Int, start: Int, where: JSON): [Gender]
+  BEAUTY_FOOD(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  CLEAN_BEAUTY(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  MARKEN(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  TYPENTESTS(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  VIDEOS(sort: String, limit: Int, start: Int, where: JSON): [Videos]
+  PARFUM(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  BEAUTY(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  HERREN(sort: String, limit: Int, start: Int, where: JSON): [Products]
+}
+
+input MenuInput {
+  INTERIER: [ID]
+  LIFESTYLE: [ID]
+  BEAUTY_FOOD: [ID]
+  CLEAN_BEAUTY: [ID]
+  MARKEN: [ID]
+  TYPENTESTS: [ID]
+  VIDEOS: [ID]
+  PARFUM: [ID]
+  BEAUTY: [ID]
+  HERREN: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editMenuInput {
+  INTERIER: [ID]
+  LIFESTYLE: [ID]
+  BEAUTY_FOOD: [ID]
+  CLEAN_BEAUTY: [ID]
+  MARKEN: [ID]
+  TYPENTESTS: [ID]
+  VIDEOS: [ID]
+  PARFUM: [ID]
+  BEAUTY: [ID]
+  HERREN: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input updateMenuInput {
+  data: editMenuInput
+}
+
+type updateMenuPayload {
+  menu: Menu
+}
+
+type deleteMenuPayload {
+  menu: Menu
+}
+
+type PageHeader {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  info: String
+  page_headers_style: JSON
+  published_at: DateTime
+}
+
+type PageHeaderConnection {
+  values: [PageHeader]
+  groupBy: PageHeaderGroupBy
+  aggregate: PageHeaderAggregator
+}
+
+type PageHeaderAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PageHeaderGroupBy {
+  id: [PageHeaderConnectionId]
+  created_at: [PageHeaderConnectionCreated_at]
+  updated_at: [PageHeaderConnectionUpdated_at]
+  info: [PageHeaderConnectionInfo]
+  page_headers_style: [PageHeaderConnectionPage_headers_style]
+  published_at: [PageHeaderConnectionPublished_at]
+}
+
+type PageHeaderConnectionId {
+  key: ID
+  connection: PageHeaderConnection
+}
+
+type PageHeaderConnectionCreated_at {
+  key: DateTime
+  connection: PageHeaderConnection
+}
+
+type PageHeaderConnectionUpdated_at {
+  key: DateTime
+  connection: PageHeaderConnection
+}
+
+type PageHeaderConnectionInfo {
+  key: String
+  connection: PageHeaderConnection
+}
+
+type PageHeaderConnectionPage_headers_style {
+  key: JSON
+  connection: PageHeaderConnection
+}
+
+type PageHeaderConnectionPublished_at {
+  key: DateTime
+  connection: PageHeaderConnection
+}
+
+input PageHeaderInput {
+  info: String
+  page_headers_style: JSON
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPageHeaderInput {
+  info: String
+  page_headers_style: JSON
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPageHeaderInput {
+  data: PageHeaderInput
+}
+
+type createPageHeaderPayload {
+  pageHeader: PageHeader
+}
+
+input updatePageHeaderInput {
+  where: InputID
+  data: editPageHeaderInput
+}
+
+type updatePageHeaderPayload {
+  pageHeader: PageHeader
+}
+
+input deletePageHeaderInput {
+  where: InputID
+}
+
+type deletePageHeaderPayload {
+  pageHeader: PageHeader
+}
+
 type Products {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  productName: String
-  description: String
   price: String
+  images: UploadFile
+  new: Boolean
+  clean_product: Boolean
+  company: String
+  energy_kapseln: Boolean
+  kapseln: Boolean
+  gender: Gender
   published_at: DateTime
-  images(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
-  videos(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 type ProductsConnection {
@@ -68,9 +605,14 @@ type ProductsGroupBy {
   id: [ProductsConnectionId]
   created_at: [ProductsConnectionCreated_at]
   updated_at: [ProductsConnectionUpdated_at]
-  productName: [ProductsConnectionProductName]
-  description: [ProductsConnectionDescription]
   price: [ProductsConnectionPrice]
+  images: [ProductsConnectionImages]
+  new: [ProductsConnectionNew]
+  clean_product: [ProductsConnectionClean_product]
+  company: [ProductsConnectionCompany]
+  energy_kapseln: [ProductsConnectionEnergy_kapseln]
+  kapseln: [ProductsConnectionKapseln]
+  gender: [ProductsConnectionGender]
   published_at: [ProductsConnectionPublished_at]
 }
 
@@ -89,18 +631,43 @@ type ProductsConnectionUpdated_at {
   connection: ProductsConnection
 }
 
-type ProductsConnectionProductName {
-  key: String
-  connection: ProductsConnection
-}
-
-type ProductsConnectionDescription {
-  key: String
-  connection: ProductsConnection
-}
-
 type ProductsConnectionPrice {
   key: String
+  connection: ProductsConnection
+}
+
+type ProductsConnectionImages {
+  key: ID
+  connection: ProductsConnection
+}
+
+type ProductsConnectionNew {
+  key: Boolean
+  connection: ProductsConnection
+}
+
+type ProductsConnectionClean_product {
+  key: Boolean
+  connection: ProductsConnection
+}
+
+type ProductsConnectionCompany {
+  key: String
+  connection: ProductsConnection
+}
+
+type ProductsConnectionEnergy_kapseln {
+  key: Boolean
+  connection: ProductsConnection
+}
+
+type ProductsConnectionKapseln {
+  key: Boolean
+  connection: ProductsConnection
+}
+
+type ProductsConnectionGender {
+  key: ID
   connection: ProductsConnection
 }
 
@@ -110,22 +677,28 @@ type ProductsConnectionPublished_at {
 }
 
 input ProductInput {
-  productName: String
-  description: String
   price: String
-  images: [ID]
-  videos: [ID]
+  images: ID
+  new: Boolean
+  clean_product: Boolean
+  company: String
+  energy_kapseln: Boolean
+  kapseln: Boolean
+  gender: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
 input editProductInput {
-  productName: String
-  description: String
   price: String
-  images: [ID]
-  videos: [ID]
+  images: ID
+  new: Boolean
+  clean_product: Boolean
+  company: String
+  energy_kapseln: Boolean
+  kapseln: Boolean
+  gender: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -154,6 +727,167 @@ input deleteProductInput {
 
 type deleteProductPayload {
   product: Products
+}
+
+type Test {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  date: Date
+  published_at: DateTime
+  products(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  users_permissions_users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+input TestInput {
+  name: String
+  date: Date
+  products: [ID]
+  users_permissions_users: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editTestInput {
+  name: String
+  date: Date
+  products: [ID]
+  users_permissions_users: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input updateTestInput {
+  data: editTestInput
+}
+
+type updateTestPayload {
+  test: Test
+}
+
+type deleteTestPayload {
+  test: Test
+}
+
+type Videos {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  video: UploadFile
+  Review_Bioeffect: String
+  video_name: String
+  description: String
+  published_at: DateTime
+}
+
+type VideosConnection {
+  values: [Videos]
+  groupBy: VideosGroupBy
+  aggregate: VideosAggregator
+}
+
+type VideosAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type VideosGroupBy {
+  id: [VideosConnectionId]
+  created_at: [VideosConnectionCreated_at]
+  updated_at: [VideosConnectionUpdated_at]
+  video: [VideosConnectionVideo]
+  Review_Bioeffect: [VideosConnectionReview_Bioeffect]
+  video_name: [VideosConnectionVideo_name]
+  description: [VideosConnectionDescription]
+  published_at: [VideosConnectionPublished_at]
+}
+
+type VideosConnectionId {
+  key: ID
+  connection: VideosConnection
+}
+
+type VideosConnectionCreated_at {
+  key: DateTime
+  connection: VideosConnection
+}
+
+type VideosConnectionUpdated_at {
+  key: DateTime
+  connection: VideosConnection
+}
+
+type VideosConnectionVideo {
+  key: ID
+  connection: VideosConnection
+}
+
+type VideosConnectionReview_Bioeffect {
+  key: String
+  connection: VideosConnection
+}
+
+type VideosConnectionVideo_name {
+  key: String
+  connection: VideosConnection
+}
+
+type VideosConnectionDescription {
+  key: String
+  connection: VideosConnection
+}
+
+type VideosConnectionPublished_at {
+  key: DateTime
+  connection: VideosConnection
+}
+
+input VideoInput {
+  video: ID
+  Review_Bioeffect: String
+  video_name: String
+  description: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editVideoInput {
+  video: ID
+  Review_Bioeffect: String
+  video_name: String
+  description: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createVideoInput {
+  data: VideoInput
+}
+
+type createVideoPayload {
+  video: Videos
+}
+
+input updateVideoInput {
+  where: InputID
+  data: editVideoInput
+}
+
+type updateVideoPayload {
+  video: Videos
+}
+
+input deleteVideoInput {
+  where: InputID
+}
+
+type deleteVideoPayload {
+  video: Videos
 }
 
 type UploadFile {
@@ -607,7 +1341,21 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionProductName | ProductsConnectionDescription | ProductsConnectionPrice | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+type ComponentTest2Test {
+  id: ID!
+  name: String
+}
+
+input ComponentTest2TestInput {
+  name: String
+}
+
+input editComponentTest2TestInput {
+  id: ID
+  name: String
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | CleanBeauty | CleanBeautyConnection | CleanBeautyAggregator | CleanBeautyGroupBy | CleanBeautyConnectionId | CleanBeautyConnectionCreated_at | CleanBeautyConnectionUpdated_at | CleanBeautyConnectionPublished_at | createCleanBeautyPayload | updateCleanBeautyPayload | deleteCleanBeautyPayload | Gender | GenderConnection | GenderAggregator | GenderGroupBy | GenderConnectionId | GenderConnectionCreated_at | GenderConnectionUpdated_at | GenderConnectionPublished_at | createGenderPayload | updateGenderPayload | deleteGenderPayload | Herren | HerrenConnection | HerrenAggregator | HerrenGroupBy | HerrenConnectionId | HerrenConnectionCreated_at | HerrenConnectionUpdated_at | HerrenConnectionPublished_at | createHerrenPayload | updateHerrenPayload | deleteHerrenPayload | Livestyyle | LivestyyleConnection | LivestyyleAggregator | LivestyyleGroupBy | LivestyyleConnectionId | LivestyyleConnectionCreated_at | LivestyyleConnectionUpdated_at | LivestyyleConnectionPublished_at | createLivestyylePayload | updateLivestyylePayload | deleteLivestyylePayload | Menu | updateMenuPayload | deleteMenuPayload | PageHeader | PageHeaderConnection | PageHeaderAggregator | PageHeaderGroupBy | PageHeaderConnectionId | PageHeaderConnectionCreated_at | PageHeaderConnectionUpdated_at | PageHeaderConnectionInfo | PageHeaderConnectionPage_headers_style | PageHeaderConnectionPublished_at | createPageHeaderPayload | updatePageHeaderPayload | deletePageHeaderPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionPrice | ProductsConnectionImages | ProductsConnectionNew | ProductsConnectionClean_product | ProductsConnectionCompany | ProductsConnectionEnergy_kapseln | ProductsConnectionKapseln | ProductsConnectionGender | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | Test | updateTestPayload | deleteTestPayload | Videos | VideosConnection | VideosAggregator | VideosGroupBy | VideosConnectionId | VideosConnectionCreated_at | VideosConnectionUpdated_at | VideosConnectionVideo | VideosConnectionReview_Bioeffect | VideosConnectionVideo_name | VideosConnectionDescription | VideosConnectionPublished_at | createVideoPayload | updateVideoPayload | deleteVideoPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentTest2Test
 
 input InputID {
   id: ID!
@@ -626,9 +1374,29 @@ type AdminUser {
 }
 
 type Query {
+  cleanBeauty(id: ID!, publicationState: PublicationState): CleanBeauty
+  cleanBeauties(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [CleanBeauty]
+  cleanBeautiesConnection(sort: String, limit: Int, start: Int, where: JSON): CleanBeautyConnection
+  gender(id: ID!, publicationState: PublicationState): Gender
+  genders(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Gender]
+  gendersConnection(sort: String, limit: Int, start: Int, where: JSON): GenderConnection
+  herren(id: ID!, publicationState: PublicationState): Herren
+  herrens(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Herren]
+  herrensConnection(sort: String, limit: Int, start: Int, where: JSON): HerrenConnection
+  livestyyle(id: ID!, publicationState: PublicationState): Livestyyle
+  livestyyles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Livestyyle]
+  livestyylesConnection(sort: String, limit: Int, start: Int, where: JSON): LivestyyleConnection
+  menu(publicationState: PublicationState): Menu
+  pageHeader(id: ID!, publicationState: PublicationState): PageHeader
+  pageHeaders(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [PageHeader]
+  pageHeadersConnection(sort: String, limit: Int, start: Int, where: JSON): PageHeaderConnection
   product(id: ID!, publicationState: PublicationState): Products
   products(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Products]
   productsConnection(sort: String, limit: Int, start: Int, where: JSON): ProductsConnection
+  test(publicationState: PublicationState): Test
+  video(id: ID!, publicationState: PublicationState): Videos
+  videos(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Videos]
+  videosConnection(sort: String, limit: Int, start: Int, where: JSON): VideosConnection
   files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
@@ -645,9 +1413,31 @@ type Query {
 }
 
 type Mutation {
+  createCleanBeauty(input: createCleanBeautyInput): createCleanBeautyPayload
+  updateCleanBeauty(input: updateCleanBeautyInput): updateCleanBeautyPayload
+  deleteCleanBeauty(input: deleteCleanBeautyInput): deleteCleanBeautyPayload
+  createGender(input: createGenderInput): createGenderPayload
+  updateGender(input: updateGenderInput): updateGenderPayload
+  deleteGender(input: deleteGenderInput): deleteGenderPayload
+  createHerren(input: createHerrenInput): createHerrenPayload
+  updateHerren(input: updateHerrenInput): updateHerrenPayload
+  deleteHerren(input: deleteHerrenInput): deleteHerrenPayload
+  createLivestyyle(input: createLivestyyleInput): createLivestyylePayload
+  updateLivestyyle(input: updateLivestyyleInput): updateLivestyylePayload
+  deleteLivestyyle(input: deleteLivestyyleInput): deleteLivestyylePayload
+  updateMenu(input: updateMenuInput): updateMenuPayload
+  deleteMenu: deleteMenuPayload
+  createPageHeader(input: createPageHeaderInput): createPageHeaderPayload
+  updatePageHeader(input: updatePageHeaderInput): updatePageHeaderPayload
+  deletePageHeader(input: deletePageHeaderInput): deletePageHeaderPayload
   createProduct(input: createProductInput): createProductPayload
   updateProduct(input: updateProductInput): updateProductPayload
   deleteProduct(input: deleteProductInput): deleteProductPayload
+  updateTest(input: updateTestInput): updateTestPayload
+  deleteTest: deleteTestPayload
+  createVideo(input: createVideoInput): createVideoPayload
+  updateVideo(input: updateVideoInput): updateVideoPayload
+  deleteVideo(input: deleteVideoInput): deleteVideoPayload
 
   """Delete one file"""
   deleteFile(input: deleteFileInput): deleteFilePayload

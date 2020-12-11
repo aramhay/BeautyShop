@@ -1,22 +1,19 @@
 'use strict';
 
-const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
+
+const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   /**
-   * Create a record.
+   * Retrieve a record.
    *
    * @return {Object}
    */
 
-  async create(ctx) {
-    let entity;
-    if (ctx.is('multipart')) {
-      const { data, files } = parseMultipartData(ctx);
-      entity = await strapi.services.products.create(data, { files });
-    } else {
-      entity = await strapi.services.products.create(ctx.request.body);
-    }
+  async index(ctx) {
+    const { id } = ctx.params;
+
+    const entity = await strapi.services.products.findOne({ id });
     return sanitizeEntity(entity, { model: strapi.models.products });
   },
 };

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clean_beauties",
+  "info": {
+    "name": "clean_beauty"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Organic": {
+      "collection": "products"
+    },
+    "Vegan": {
+      "collection": "products"
+    }
+  }
+}

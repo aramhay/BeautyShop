@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_test2_tests",
+  "info": {
+    "name": "test",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/clean-beauties",
+      "handler": "clean-beauty.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clean-beauties/count",
+      "handler": "clean-beauty.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clean-beauties/:id",
+      "handler": "clean-beauty.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/clean-beauties",
+      "handler": "clean-beauty.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/clean-beauties/:id",
+      "handler": "clean-beauty.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/clean-beauties/:id",
+      "handler": "clean-beauty.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

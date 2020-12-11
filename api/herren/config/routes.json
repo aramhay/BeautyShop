@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/herrens",
+      "handler": "herren.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/herrens/count",
+      "handler": "herren.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/herrens/:id",
+      "handler": "herren.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/herrens",
+      "handler": "herren.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/herrens/:id",
+      "handler": "herren.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/herrens/:id",
+      "handler": "herren.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

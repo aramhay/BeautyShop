@@ -3,11 +3,12 @@
     {
       "method": "GET",
       "path": "/products",
-      "handler": "products.find",
+      "handler": "products.index",
       "config": {
         "policies": []
       }
     },
+    
     {
       "method": "GET",
       "path": "/products/count",

@@ -11,17 +11,11 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "productName": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
     "price": {
       "type": "string"
     },
     "images": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -31,16 +25,24 @@
       "plugin": "upload",
       "required": false
     },
-    "videos": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
+    "new": {
+      "type": "boolean"
+    },
+    "clean_product": {
+      "type": "boolean"
+    },
+    "company": {
+      "type": "string"
+    },
+    "energy_kapseln": {
+      "type": "boolean"
+    },
+    "kapseln": {
+      "type": "boolean"
+    },
+    "gender": {
+      "via": "uni",
+      "model": "gender"
     }
   }
 }

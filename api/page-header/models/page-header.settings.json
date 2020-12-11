@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_headers",
+  "info": {
+    "name": "page_header",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "info": {
+      "type": "richtext"
+    },
+    "page_headers_style": {
+      "type": "json"
+    }
+  }
+}
