@@ -12,11 +12,13 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
+    "loadsh": "^0.0.4",
     "pg": "^8.5.1",
     "strapi": "3.3.4",
     "strapi-admin": "3.3.4",
     "strapi-connector-bookshelf": "3.3.4",
     "strapi-generate-api": "^3.3.4",
+    "strapi-hook-knex": "^3.0.0-beta.17.8",
     "strapi-plugin-content-manager": "3.3.4",
     "strapi-plugin-content-type-builder": "3.3.4",
     "strapi-plugin-documentation": "3.3.4",
@@ -25,6 +27,8 @@
     "strapi-plugin-upload": "3.3.4",
     "strapi-plugin-users-permissions": "^3.3.4",
     "strapi-provider-email-sendgrid": "^3.3.4",
+    "strapi-provider-email-sendmail": "^3.3.4",
+    "strapi-provider-upload-imagekit": "^0.2.1",
     "strapi-utils": "^3.3.4"
   },
   "author": {

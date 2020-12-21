@@ -7,3 +7,20 @@ module.exports = ({ env }) => ({
     },
   },
 });
+
+
+// const forgotPasswordTemplate = require('./email-templates/forgot-password');
+
+// module.exports = ({ env }) => ({
+//   // ...
+//   admin: {
+//     // ...
+//     forgotPassword: {
+//       from: 'mankuyanars@gmail.com',
+//       replyTo: 'mankuyanars@gmail.com',
+//       emailTemplate: forgotPasswordTemplate,
+//     },
+//     // ...
+//   },
+//   // ...
+// });

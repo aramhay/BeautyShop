@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/email",
+        "handler": "Email.sendemail",
+        "config": {
+          "policies": []
+        }
+      }
+      
+    ]
+  }
+  

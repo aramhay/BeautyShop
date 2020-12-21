@@ -1,0 +1,677 @@
+{
+  "paths": {
+    "/livestyles/trinkflaschen": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    },
+    "/livestyles/makeup_etuis": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    },
+    "/livestyles/korperbursten": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    },
+    "/livestyles/kerzen": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    },
+    "/livestyles/fur_mutter": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    },
+    "/livestyles/nahrungserganzungsmittel": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Livestyle"
+        ],
+        "parameters": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Livestyle": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "Trinkflaschen": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Makeup_Etuis": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Korperbursten": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Kerzen": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Fur_Mutter": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Nahrungserganzungsmittel": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "new": {
+                "type": "boolean"
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "company": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "paruyr_cart": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewLivestyle": {
+        "properties": {
+          "Trinkflaschen": {
+            "type": "string"
+          },
+          "Makeup_Etuis": {
+            "type": "string"
+          },
+          "Korperbursten": {
+            "type": "string"
+          },
+          "Kerzen": {
+            "type": "string"
+          },
+          "Fur_Mutter": {
+            "type": "string"
+          },
+          "Nahrungserganzungsmittel": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Livestyle"
+    }
+  ]
+}

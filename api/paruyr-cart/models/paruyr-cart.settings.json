@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paruyr_carts",
+  "info": {
+    "name": "paruyr_cart",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "columnName": "id",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "product": {
+      "unique": true,
+      "columnName": "id",
+      "model": "products",
+      "via": "paruyr_cart"
+    },
+    "countity": {
+      "type": "biginteger"
+    }
+  }
+}

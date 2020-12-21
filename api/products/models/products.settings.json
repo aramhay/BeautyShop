@@ -40,9 +40,12 @@
     "kapseln": {
       "type": "boolean"
     },
-    "gender": {
-      "via": "uni",
-      "model": "gender"
+    "for_sale_count": {
+      "type": "biginteger"
+    },
+    "paruyr_cart": {
+      "via": "product",
+      "model": "paruyr-cart"
     }
   }
 }

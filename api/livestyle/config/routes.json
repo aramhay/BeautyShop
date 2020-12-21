@@ -1,0 +1,53 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/livestyles/trinkflaschen",
+      "handler": "livestyle.findTrinkflaschen",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/livestyles/makeup_etuis",
+      "handler": "livestyle.findMakeup_Etuis",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/livestyles/korperbursten",
+      "handler": "livestyle.findKorperbursten",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/livestyles/kerzen",
+      "handler": "livestyle.findKerzen",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/livestyles/fur_mutter",
+      "handler": "livestyle.findFur_Mutter",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/livestyles/nahrungserganzungsmittel",
+      "handler": "livestyle.findNahrungserganzungsmittel",
+      "config": {
+        "policies": []
+      }
+    }
+
+  ]
+}

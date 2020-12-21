@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favourite_products",
+  "info": {
+    "name": "favourite_products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "products": {
+      "columnName": "id",
+      "collection": "products"
+    },
+    "users_permissions_user": {
+      "unique": true,
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shoping_carts",
+  "info": {
+    "name": "shoping_cart",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "unique": true,
+      "columnName": "id",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "products": {
+      "columnName": "id",
+      "collection": "products"
+    }
+  }
+}

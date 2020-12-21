@@ -129,95 +129,98 @@ type deleteCleanBeautyPayload {
   cleanBeauty: CleanBeauty
 }
 
-type Gender {
+type FavouriteProducts {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
+  users_permissions_user: UsersPermissionsUser
   published_at: DateTime
-  men(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  uni(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  women(sort: String, limit: Int, start: Int, where: JSON): [Gender]
+  products(sort: String, limit: Int, start: Int, where: JSON): [Products]
 }
 
-type GenderConnection {
-  values: [Gender]
-  groupBy: GenderGroupBy
-  aggregate: GenderAggregator
+type FavouriteProductsConnection {
+  values: [FavouriteProducts]
+  groupBy: FavouriteProductsGroupBy
+  aggregate: FavouriteProductsAggregator
 }
 
-type GenderAggregator {
+type FavouriteProductsAggregator {
   count: Int
   totalCount: Int
 }
 
-type GenderGroupBy {
-  id: [GenderConnectionId]
-  created_at: [GenderConnectionCreated_at]
-  updated_at: [GenderConnectionUpdated_at]
-  published_at: [GenderConnectionPublished_at]
+type FavouriteProductsGroupBy {
+  id: [FavouriteProductsConnectionId]
+  created_at: [FavouriteProductsConnectionCreated_at]
+  updated_at: [FavouriteProductsConnectionUpdated_at]
+  users_permissions_user: [FavouriteProductsConnectionUsers_permissions_user]
+  published_at: [FavouriteProductsConnectionPublished_at]
 }
 
-type GenderConnectionId {
+type FavouriteProductsConnectionId {
   key: ID
-  connection: GenderConnection
+  connection: FavouriteProductsConnection
 }
 
-type GenderConnectionCreated_at {
+type FavouriteProductsConnectionCreated_at {
   key: DateTime
-  connection: GenderConnection
+  connection: FavouriteProductsConnection
 }
 
-type GenderConnectionUpdated_at {
+type FavouriteProductsConnectionUpdated_at {
   key: DateTime
-  connection: GenderConnection
+  connection: FavouriteProductsConnection
 }
 
-type GenderConnectionPublished_at {
+type FavouriteProductsConnectionUsers_permissions_user {
+  key: ID
+  connection: FavouriteProductsConnection
+}
+
+type FavouriteProductsConnectionPublished_at {
   key: DateTime
-  connection: GenderConnection
+  connection: FavouriteProductsConnection
 }
 
-input GenderInput {
-  men: [ID]
-  uni: [ID]
-  women: [ID]
+input FavouriteProductInput {
+  products: [ID]
+  users_permissions_user: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input editGenderInput {
-  men: [ID]
-  uni: [ID]
-  women: [ID]
+input editFavouriteProductInput {
+  products: [ID]
+  users_permissions_user: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input createGenderInput {
-  data: GenderInput
+input createFavouriteProductInput {
+  data: FavouriteProductInput
 }
 
-type createGenderPayload {
-  gender: Gender
+type createFavouriteProductPayload {
+  favouriteProduct: FavouriteProducts
 }
 
-input updateGenderInput {
+input updateFavouriteProductInput {
   where: InputID
-  data: editGenderInput
+  data: editFavouriteProductInput
 }
 
-type updateGenderPayload {
-  gender: Gender
+type updateFavouriteProductPayload {
+  favouriteProduct: FavouriteProducts
 }
 
-input deleteGenderInput {
+input deleteFavouriteProductInput {
   where: InputID
 }
 
-type deleteGenderPayload {
-  gender: Gender
+type deleteFavouriteProductPayload {
+  favouriteProduct: FavouriteProducts
 }
 
 type Herren {
@@ -314,7 +317,7 @@ type deleteHerrenPayload {
   herren: Herren
 }
 
-type Livestyyle {
+type Livestyle {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
@@ -327,45 +330,45 @@ type Livestyyle {
   Nahrungserganzungsmittel(sort: String, limit: Int, start: Int, where: JSON): [Products]
 }
 
-type LivestyyleConnection {
-  values: [Livestyyle]
-  groupBy: LivestyyleGroupBy
-  aggregate: LivestyyleAggregator
+type LivestyleConnection {
+  values: [Livestyle]
+  groupBy: LivestyleGroupBy
+  aggregate: LivestyleAggregator
 }
 
-type LivestyyleAggregator {
+type LivestyleAggregator {
   count: Int
   totalCount: Int
 }
 
-type LivestyyleGroupBy {
-  id: [LivestyyleConnectionId]
-  created_at: [LivestyyleConnectionCreated_at]
-  updated_at: [LivestyyleConnectionUpdated_at]
-  published_at: [LivestyyleConnectionPublished_at]
+type LivestyleGroupBy {
+  id: [LivestyleConnectionId]
+  created_at: [LivestyleConnectionCreated_at]
+  updated_at: [LivestyleConnectionUpdated_at]
+  published_at: [LivestyleConnectionPublished_at]
 }
 
-type LivestyyleConnectionId {
+type LivestyleConnectionId {
   key: ID
-  connection: LivestyyleConnection
+  connection: LivestyleConnection
 }
 
-type LivestyyleConnectionCreated_at {
+type LivestyleConnectionCreated_at {
   key: DateTime
-  connection: LivestyyleConnection
+  connection: LivestyleConnection
 }
 
-type LivestyyleConnectionUpdated_at {
+type LivestyleConnectionUpdated_at {
   key: DateTime
-  connection: LivestyyleConnection
+  connection: LivestyleConnection
 }
 
-type LivestyyleConnectionPublished_at {
+type LivestyleConnectionPublished_at {
   key: DateTime
-  connection: LivestyyleConnection
+  connection: LivestyleConnection
 }
 
-input LivestyyleInput {
+input LivestyleInput {
   Trinkflaschen: [ID]
   Makeup_Etuis: [ID]
   Korperbursten: [ID]
@@ -377,7 +380,7 @@ input LivestyyleInput {
   updated_by: ID
 }
 
-input editLivestyyleInput {
+input editLivestyleInput {
   Trinkflaschen: [ID]
   Makeup_Etuis: [ID]
   Korperbursten: [ID]
@@ -389,90 +392,154 @@ input editLivestyyleInput {
   updated_by: ID
 }
 
-input createLivestyyleInput {
-  data: LivestyyleInput
+input createLivestyleInput {
+  data: LivestyleInput
 }
 
-type createLivestyylePayload {
-  livestyyle: Livestyyle
+type createLivestylePayload {
+  livestyle: Livestyle
 }
 
-input updateLivestyyleInput {
+input updateLivestyleInput {
   where: InputID
-  data: editLivestyyleInput
+  data: editLivestyleInput
 }
 
-type updateLivestyylePayload {
-  livestyyle: Livestyyle
+type updateLivestylePayload {
+  livestyle: Livestyle
 }
 
-input deleteLivestyyleInput {
+input deleteLivestyleInput {
   where: InputID
 }
 
-type deleteLivestyylePayload {
-  livestyyle: Livestyyle
+type deleteLivestylePayload {
+  livestyle: Livestyle
 }
 
-type Menu {
+type M {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
+  name: String
   published_at: DateTime
-  INTERIER(sort: String, limit: Int, start: Int, where: JSON): [Gender]
-  LIFESTYLE(sort: String, limit: Int, start: Int, where: JSON): [Gender]
-  BEAUTY_FOOD(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  CLEAN_BEAUTY(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  MARKEN(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  TYPENTESTS(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  VIDEOS(sort: String, limit: Int, start: Int, where: JSON): [Videos]
-  PARFUM(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  BEAUTY(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  HERREN(sort: String, limit: Int, start: Int, where: JSON): [Products]
 }
 
-input MenuInput {
-  INTERIER: [ID]
-  LIFESTYLE: [ID]
-  BEAUTY_FOOD: [ID]
-  CLEAN_BEAUTY: [ID]
-  MARKEN: [ID]
-  TYPENTESTS: [ID]
-  VIDEOS: [ID]
-  PARFUM: [ID]
-  BEAUTY: [ID]
-  HERREN: [ID]
+input MInput {
+  name: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input editMenuInput {
-  INTERIER: [ID]
-  LIFESTYLE: [ID]
-  BEAUTY_FOOD: [ID]
-  CLEAN_BEAUTY: [ID]
-  MARKEN: [ID]
-  TYPENTESTS: [ID]
-  VIDEOS: [ID]
-  PARFUM: [ID]
-  BEAUTY: [ID]
-  HERREN: [ID]
+input editMInput {
+  name: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input updateMenuInput {
-  data: editMenuInput
+input updateMInput {
+  data: editMInput
 }
 
-type updateMenuPayload {
-  menu: Menu
+type updateMPayload {
+  m: M
 }
 
-type deleteMenuPayload {
-  menu: Menu
+type deleteMPayload {
+  m: M
+}
+
+type Navbar {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  categories: JSON
+  published_at: DateTime
+}
+
+type NavbarConnection {
+  values: [Navbar]
+  groupBy: NavbarGroupBy
+  aggregate: NavbarAggregator
+}
+
+type NavbarAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NavbarGroupBy {
+  id: [NavbarConnectionId]
+  created_at: [NavbarConnectionCreated_at]
+  updated_at: [NavbarConnectionUpdated_at]
+  categories: [NavbarConnectionCategories]
+  published_at: [NavbarConnectionPublished_at]
+}
+
+type NavbarConnectionId {
+  key: ID
+  connection: NavbarConnection
+}
+
+type NavbarConnectionCreated_at {
+  key: DateTime
+  connection: NavbarConnection
+}
+
+type NavbarConnectionUpdated_at {
+  key: DateTime
+  connection: NavbarConnection
+}
+
+type NavbarConnectionCategories {
+  key: JSON
+  connection: NavbarConnection
+}
+
+type NavbarConnectionPublished_at {
+  key: DateTime
+  connection: NavbarConnection
+}
+
+input NavbarInput {
+  categories: JSON
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editNavbarInput {
+  categories: JSON
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createNavbarInput {
+  data: NavbarInput
+}
+
+type createNavbarPayload {
+  navbar: Navbar
+}
+
+input updateNavbarInput {
+  where: InputID
+  data: editNavbarInput
+}
+
+type updateNavbarPayload {
+  navbar: Navbar
+}
+
+input deleteNavbarInput {
+  where: InputID
+}
+
+type deleteNavbarPayload {
+  navbar: Navbar
 }
 
 type PageHeader {
@@ -575,6 +642,206 @@ type deletePageHeaderPayload {
   pageHeader: PageHeader
 }
 
+type Parfums {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  published_at: DateTime
+  Damen(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Herren(sort: String, limit: Int, start: Int, where: JSON): [Products]
+  Unisex(sort: String, limit: Int, start: Int, where: JSON): [Products]
+}
+
+type ParfumsConnection {
+  values: [Parfums]
+  groupBy: ParfumsGroupBy
+  aggregate: ParfumsAggregator
+}
+
+type ParfumsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ParfumsGroupBy {
+  id: [ParfumsConnectionId]
+  created_at: [ParfumsConnectionCreated_at]
+  updated_at: [ParfumsConnectionUpdated_at]
+  published_at: [ParfumsConnectionPublished_at]
+}
+
+type ParfumsConnectionId {
+  key: ID
+  connection: ParfumsConnection
+}
+
+type ParfumsConnectionCreated_at {
+  key: DateTime
+  connection: ParfumsConnection
+}
+
+type ParfumsConnectionUpdated_at {
+  key: DateTime
+  connection: ParfumsConnection
+}
+
+type ParfumsConnectionPublished_at {
+  key: DateTime
+  connection: ParfumsConnection
+}
+
+input ParfumInput {
+  Damen: [ID]
+  Herren: [ID]
+  Unisex: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editParfumInput {
+  Damen: [ID]
+  Herren: [ID]
+  Unisex: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createParfumInput {
+  data: ParfumInput
+}
+
+type createParfumPayload {
+  parfum: Parfums
+}
+
+input updateParfumInput {
+  where: InputID
+  data: editParfumInput
+}
+
+type updateParfumPayload {
+  parfum: Parfums
+}
+
+input deleteParfumInput {
+  where: InputID
+}
+
+type deleteParfumPayload {
+  parfum: Parfums
+}
+
+type ParuyrCart {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  users_permissions_user: UsersPermissionsUser
+  product: Products
+  countity: Long
+  published_at: DateTime
+}
+
+type ParuyrCartConnection {
+  values: [ParuyrCart]
+  groupBy: ParuyrCartGroupBy
+  aggregate: ParuyrCartAggregator
+}
+
+type ParuyrCartAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ParuyrCartGroupBy {
+  id: [ParuyrCartConnectionId]
+  created_at: [ParuyrCartConnectionCreated_at]
+  updated_at: [ParuyrCartConnectionUpdated_at]
+  users_permissions_user: [ParuyrCartConnectionUsers_permissions_user]
+  product: [ParuyrCartConnectionProduct]
+  countity: [ParuyrCartConnectionCountity]
+  published_at: [ParuyrCartConnectionPublished_at]
+}
+
+type ParuyrCartConnectionId {
+  key: ID
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionCreated_at {
+  key: DateTime
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionUpdated_at {
+  key: DateTime
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionUsers_permissions_user {
+  key: ID
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionProduct {
+  key: ID
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionCountity {
+  key: ID
+  connection: ParuyrCartConnection
+}
+
+type ParuyrCartConnectionPublished_at {
+  key: DateTime
+  connection: ParuyrCartConnection
+}
+
+input ParuyrCartInput {
+  users_permissions_user: ID
+  product: ID
+  countity: Long
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editParuyrCartInput {
+  users_permissions_user: ID
+  product: ID
+  countity: Long
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createParuyrCartInput {
+  data: ParuyrCartInput
+}
+
+type createParuyrCartPayload {
+  paruyrCart: ParuyrCart
+}
+
+input updateParuyrCartInput {
+  where: InputID
+  data: editParuyrCartInput
+}
+
+type updateParuyrCartPayload {
+  paruyrCart: ParuyrCart
+}
+
+input deleteParuyrCartInput {
+  where: InputID
+}
+
+type deleteParuyrCartPayload {
+  paruyrCart: ParuyrCart
+}
+
 type Products {
   id: ID!
   created_at: DateTime!
@@ -586,7 +853,8 @@ type Products {
   company: String
   energy_kapseln: Boolean
   kapseln: Boolean
-  gender: Gender
+  for_sale_count: Long
+  paruyr_cart: ParuyrCart
   published_at: DateTime
 }
 
@@ -612,7 +880,8 @@ type ProductsGroupBy {
   company: [ProductsConnectionCompany]
   energy_kapseln: [ProductsConnectionEnergy_kapseln]
   kapseln: [ProductsConnectionKapseln]
-  gender: [ProductsConnectionGender]
+  for_sale_count: [ProductsConnectionFor_sale_count]
+  paruyr_cart: [ProductsConnectionParuyr_cart]
   published_at: [ProductsConnectionPublished_at]
 }
 
@@ -666,7 +935,12 @@ type ProductsConnectionKapseln {
   connection: ProductsConnection
 }
 
-type ProductsConnectionGender {
+type ProductsConnectionFor_sale_count {
+  key: ID
+  connection: ProductsConnection
+}
+
+type ProductsConnectionParuyr_cart {
   key: ID
   connection: ProductsConnection
 }
@@ -684,7 +958,8 @@ input ProductInput {
   company: String
   energy_kapseln: Boolean
   kapseln: Boolean
-  gender: ID
+  for_sale_count: Long
+  paruyr_cart: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -698,7 +973,8 @@ input editProductInput {
   company: String
   energy_kapseln: Boolean
   kapseln: Boolean
-  gender: ID
+  for_sale_count: Long
+  paruyr_cart: ID
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -729,47 +1005,98 @@ type deleteProductPayload {
   product: Products
 }
 
-type Test {
+type ShopingCart {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  name: String
-  date: Date
+  users_permissions_user: UsersPermissionsUser
   published_at: DateTime
   products(sort: String, limit: Int, start: Int, where: JSON): [Products]
-  users_permissions_users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
 }
 
-input TestInput {
-  name: String
-  date: Date
+type ShopingCartConnection {
+  values: [ShopingCart]
+  groupBy: ShopingCartGroupBy
+  aggregate: ShopingCartAggregator
+}
+
+type ShopingCartAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ShopingCartGroupBy {
+  id: [ShopingCartConnectionId]
+  created_at: [ShopingCartConnectionCreated_at]
+  updated_at: [ShopingCartConnectionUpdated_at]
+  users_permissions_user: [ShopingCartConnectionUsers_permissions_user]
+  published_at: [ShopingCartConnectionPublished_at]
+}
+
+type ShopingCartConnectionId {
+  key: ID
+  connection: ShopingCartConnection
+}
+
+type ShopingCartConnectionCreated_at {
+  key: DateTime
+  connection: ShopingCartConnection
+}
+
+type ShopingCartConnectionUpdated_at {
+  key: DateTime
+  connection: ShopingCartConnection
+}
+
+type ShopingCartConnectionUsers_permissions_user {
+  key: ID
+  connection: ShopingCartConnection
+}
+
+type ShopingCartConnectionPublished_at {
+  key: DateTime
+  connection: ShopingCartConnection
+}
+
+input ShopingCartInput {
+  users_permissions_user: ID
   products: [ID]
-  users_permissions_users: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input editTestInput {
-  name: String
-  date: Date
+input editShopingCartInput {
+  users_permissions_user: ID
   products: [ID]
-  users_permissions_users: [ID]
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
-input updateTestInput {
-  data: editTestInput
+input createShopingCartInput {
+  data: ShopingCartInput
 }
 
-type updateTestPayload {
-  test: Test
+type createShopingCartPayload {
+  shopingCart: ShopingCart
 }
 
-type deleteTestPayload {
-  test: Test
+input updateShopingCartInput {
+  where: InputID
+  data: editShopingCartInput
+}
+
+type updateShopingCartPayload {
+  shopingCart: ShopingCart
+}
+
+input deleteShopingCartInput {
+  where: InputID
+}
+
+type deleteShopingCartPayload {
+  shopingCart: ShopingCart
 }
 
 type Videos {
@@ -1341,21 +1668,7 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
-type ComponentTest2Test {
-  id: ID!
-  name: String
-}
-
-input ComponentTest2TestInput {
-  name: String
-}
-
-input editComponentTest2TestInput {
-  id: ID
-  name: String
-}
-
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | CleanBeauty | CleanBeautyConnection | CleanBeautyAggregator | CleanBeautyGroupBy | CleanBeautyConnectionId | CleanBeautyConnectionCreated_at | CleanBeautyConnectionUpdated_at | CleanBeautyConnectionPublished_at | createCleanBeautyPayload | updateCleanBeautyPayload | deleteCleanBeautyPayload | Gender | GenderConnection | GenderAggregator | GenderGroupBy | GenderConnectionId | GenderConnectionCreated_at | GenderConnectionUpdated_at | GenderConnectionPublished_at | createGenderPayload | updateGenderPayload | deleteGenderPayload | Herren | HerrenConnection | HerrenAggregator | HerrenGroupBy | HerrenConnectionId | HerrenConnectionCreated_at | HerrenConnectionUpdated_at | HerrenConnectionPublished_at | createHerrenPayload | updateHerrenPayload | deleteHerrenPayload | Livestyyle | LivestyyleConnection | LivestyyleAggregator | LivestyyleGroupBy | LivestyyleConnectionId | LivestyyleConnectionCreated_at | LivestyyleConnectionUpdated_at | LivestyyleConnectionPublished_at | createLivestyylePayload | updateLivestyylePayload | deleteLivestyylePayload | Menu | updateMenuPayload | deleteMenuPayload | PageHeader | PageHeaderConnection | PageHeaderAggregator | PageHeaderGroupBy | PageHeaderConnectionId | PageHeaderConnectionCreated_at | PageHeaderConnectionUpdated_at | PageHeaderConnectionInfo | PageHeaderConnectionPage_headers_style | PageHeaderConnectionPublished_at | createPageHeaderPayload | updatePageHeaderPayload | deletePageHeaderPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionPrice | ProductsConnectionImages | ProductsConnectionNew | ProductsConnectionClean_product | ProductsConnectionCompany | ProductsConnectionEnergy_kapseln | ProductsConnectionKapseln | ProductsConnectionGender | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | Test | updateTestPayload | deleteTestPayload | Videos | VideosConnection | VideosAggregator | VideosGroupBy | VideosConnectionId | VideosConnectionCreated_at | VideosConnectionUpdated_at | VideosConnectionVideo | VideosConnectionReview_Bioeffect | VideosConnectionVideo_name | VideosConnectionDescription | VideosConnectionPublished_at | createVideoPayload | updateVideoPayload | deleteVideoPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentTest2Test
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | CleanBeauty | CleanBeautyConnection | CleanBeautyAggregator | CleanBeautyGroupBy | CleanBeautyConnectionId | CleanBeautyConnectionCreated_at | CleanBeautyConnectionUpdated_at | CleanBeautyConnectionPublished_at | createCleanBeautyPayload | updateCleanBeautyPayload | deleteCleanBeautyPayload | FavouriteProducts | FavouriteProductsConnection | FavouriteProductsAggregator | FavouriteProductsGroupBy | FavouriteProductsConnectionId | FavouriteProductsConnectionCreated_at | FavouriteProductsConnectionUpdated_at | FavouriteProductsConnectionUsers_permissions_user | FavouriteProductsConnectionPublished_at | createFavouriteProductPayload | updateFavouriteProductPayload | deleteFavouriteProductPayload | Herren | HerrenConnection | HerrenAggregator | HerrenGroupBy | HerrenConnectionId | HerrenConnectionCreated_at | HerrenConnectionUpdated_at | HerrenConnectionPublished_at | createHerrenPayload | updateHerrenPayload | deleteHerrenPayload | Livestyle | LivestyleConnection | LivestyleAggregator | LivestyleGroupBy | LivestyleConnectionId | LivestyleConnectionCreated_at | LivestyleConnectionUpdated_at | LivestyleConnectionPublished_at | createLivestylePayload | updateLivestylePayload | deleteLivestylePayload | M | updateMPayload | deleteMPayload | Navbar | NavbarConnection | NavbarAggregator | NavbarGroupBy | NavbarConnectionId | NavbarConnectionCreated_at | NavbarConnectionUpdated_at | NavbarConnectionCategories | NavbarConnectionPublished_at | createNavbarPayload | updateNavbarPayload | deleteNavbarPayload | PageHeader | PageHeaderConnection | PageHeaderAggregator | PageHeaderGroupBy | PageHeaderConnectionId | PageHeaderConnectionCreated_at | PageHeaderConnectionUpdated_at | PageHeaderConnectionInfo | PageHeaderConnectionPage_headers_style | PageHeaderConnectionPublished_at | createPageHeaderPayload | updatePageHeaderPayload | deletePageHeaderPayload | Parfums | ParfumsConnection | ParfumsAggregator | ParfumsGroupBy | ParfumsConnectionId | ParfumsConnectionCreated_at | ParfumsConnectionUpdated_at | ParfumsConnectionPublished_at | createParfumPayload | updateParfumPayload | deleteParfumPayload | ParuyrCart | ParuyrCartConnection | ParuyrCartAggregator | ParuyrCartGroupBy | ParuyrCartConnectionId | ParuyrCartConnectionCreated_at | ParuyrCartConnectionUpdated_at | ParuyrCartConnectionUsers_permissions_user | ParuyrCartConnectionProduct | ParuyrCartConnectionCountity | ParuyrCartConnectionPublished_at | createParuyrCartPayload | updateParuyrCartPayload | deleteParuyrCartPayload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_at | ProductsConnectionUpdated_at | ProductsConnectionPrice | ProductsConnectionImages | ProductsConnectionNew | ProductsConnectionClean_product | ProductsConnectionCompany | ProductsConnectionEnergy_kapseln | ProductsConnectionKapseln | ProductsConnectionFor_sale_count | ProductsConnectionParuyr_cart | ProductsConnectionPublished_at | createProductPayload | updateProductPayload | deleteProductPayload | ShopingCart | ShopingCartConnection | ShopingCartAggregator | ShopingCartGroupBy | ShopingCartConnectionId | ShopingCartConnectionCreated_at | ShopingCartConnectionUpdated_at | ShopingCartConnectionUsers_permissions_user | ShopingCartConnectionPublished_at | createShopingCartPayload | updateShopingCartPayload | deleteShopingCartPayload | Videos | VideosConnection | VideosAggregator | VideosGroupBy | VideosConnectionId | VideosConnectionCreated_at | VideosConnectionUpdated_at | VideosConnectionVideo | VideosConnectionReview_Bioeffect | VideosConnectionVideo_name | VideosConnectionDescription | VideosConnectionPublished_at | createVideoPayload | updateVideoPayload | deleteVideoPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
 
 input InputID {
   id: ID!
@@ -1377,23 +1690,34 @@ type Query {
   cleanBeauty(id: ID!, publicationState: PublicationState): CleanBeauty
   cleanBeauties(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [CleanBeauty]
   cleanBeautiesConnection(sort: String, limit: Int, start: Int, where: JSON): CleanBeautyConnection
-  gender(id: ID!, publicationState: PublicationState): Gender
-  genders(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Gender]
-  gendersConnection(sort: String, limit: Int, start: Int, where: JSON): GenderConnection
+  favouriteProduct(id: ID!, publicationState: PublicationState): FavouriteProducts
+  favouriteProducts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [FavouriteProducts]
+  favouriteProductsConnection(sort: String, limit: Int, start: Int, where: JSON): FavouriteProductsConnection
   herren(id: ID!, publicationState: PublicationState): Herren
   herrens(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Herren]
   herrensConnection(sort: String, limit: Int, start: Int, where: JSON): HerrenConnection
-  livestyyle(id: ID!, publicationState: PublicationState): Livestyyle
-  livestyyles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Livestyyle]
-  livestyylesConnection(sort: String, limit: Int, start: Int, where: JSON): LivestyyleConnection
-  menu(publicationState: PublicationState): Menu
+  livestyle(id: ID!, publicationState: PublicationState): Livestyle
+  livestyles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Livestyle]
+  livestylesConnection(sort: String, limit: Int, start: Int, where: JSON): LivestyleConnection
+  m(publicationState: PublicationState): M
+  navbar(id: ID!, publicationState: PublicationState): Navbar
+  navbars(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Navbar]
+  navbarsConnection(sort: String, limit: Int, start: Int, where: JSON): NavbarConnection
   pageHeader(id: ID!, publicationState: PublicationState): PageHeader
   pageHeaders(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [PageHeader]
   pageHeadersConnection(sort: String, limit: Int, start: Int, where: JSON): PageHeaderConnection
+  parfum(id: ID!, publicationState: PublicationState): Parfums
+  parfums(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Parfums]
+  parfumsConnection(sort: String, limit: Int, start: Int, where: JSON): ParfumsConnection
+  paruyrCart(id: ID!, publicationState: PublicationState): ParuyrCart
+  paruyrCarts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [ParuyrCart]
+  paruyrCartsConnection(sort: String, limit: Int, start: Int, where: JSON): ParuyrCartConnection
   product(id: ID!, publicationState: PublicationState): Products
   products(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Products]
   productsConnection(sort: String, limit: Int, start: Int, where: JSON): ProductsConnection
-  test(publicationState: PublicationState): Test
+  shopingCart(id: ID!, publicationState: PublicationState): ShopingCart
+  shopingCarts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [ShopingCart]
+  shopingCartsConnection(sort: String, limit: Int, start: Int, where: JSON): ShopingCartConnection
   video(id: ID!, publicationState: PublicationState): Videos
   videos(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Videos]
   videosConnection(sort: String, limit: Int, start: Int, where: JSON): VideosConnection
@@ -1416,25 +1740,35 @@ type Mutation {
   createCleanBeauty(input: createCleanBeautyInput): createCleanBeautyPayload
   updateCleanBeauty(input: updateCleanBeautyInput): updateCleanBeautyPayload
   deleteCleanBeauty(input: deleteCleanBeautyInput): deleteCleanBeautyPayload
-  createGender(input: createGenderInput): createGenderPayload
-  updateGender(input: updateGenderInput): updateGenderPayload
-  deleteGender(input: deleteGenderInput): deleteGenderPayload
+  createFavouriteProduct(input: createFavouriteProductInput): createFavouriteProductPayload
+  updateFavouriteProduct(input: updateFavouriteProductInput): updateFavouriteProductPayload
+  deleteFavouriteProduct(input: deleteFavouriteProductInput): deleteFavouriteProductPayload
   createHerren(input: createHerrenInput): createHerrenPayload
   updateHerren(input: updateHerrenInput): updateHerrenPayload
   deleteHerren(input: deleteHerrenInput): deleteHerrenPayload
-  createLivestyyle(input: createLivestyyleInput): createLivestyylePayload
-  updateLivestyyle(input: updateLivestyyleInput): updateLivestyylePayload
-  deleteLivestyyle(input: deleteLivestyyleInput): deleteLivestyylePayload
-  updateMenu(input: updateMenuInput): updateMenuPayload
-  deleteMenu: deleteMenuPayload
+  createLivestyle(input: createLivestyleInput): createLivestylePayload
+  updateLivestyle(input: updateLivestyleInput): updateLivestylePayload
+  deleteLivestyle(input: deleteLivestyleInput): deleteLivestylePayload
+  updateM(input: updateMInput): updateMPayload
+  deleteM: deleteMPayload
+  createNavbar(input: createNavbarInput): createNavbarPayload
+  updateNavbar(input: updateNavbarInput): updateNavbarPayload
+  deleteNavbar(input: deleteNavbarInput): deleteNavbarPayload
   createPageHeader(input: createPageHeaderInput): createPageHeaderPayload
   updatePageHeader(input: updatePageHeaderInput): updatePageHeaderPayload
   deletePageHeader(input: deletePageHeaderInput): deletePageHeaderPayload
+  createParfum(input: createParfumInput): createParfumPayload
+  updateParfum(input: updateParfumInput): updateParfumPayload
+  deleteParfum(input: deleteParfumInput): deleteParfumPayload
+  createParuyrCart(input: createParuyrCartInput): createParuyrCartPayload
+  updateParuyrCart(input: updateParuyrCartInput): updateParuyrCartPayload
+  deleteParuyrCart(input: deleteParuyrCartInput): deleteParuyrCartPayload
   createProduct(input: createProductInput): createProductPayload
   updateProduct(input: updateProductInput): updateProductPayload
   deleteProduct(input: deleteProductInput): deleteProductPayload
-  updateTest(input: updateTestInput): updateTestPayload
-  deleteTest: deleteTestPayload
+  createShopingCart(input: createShopingCartInput): createShopingCartPayload
+  updateShopingCart(input: updateShopingCartInput): updateShopingCartPayload
+  deleteShopingCart(input: deleteShopingCartInput): deleteShopingCartPayload
   createVideo(input: createVideoInput): createVideoPayload
   updateVideo(input: updateVideoInput): updateVideoPayload
   deleteVideo(input: deleteVideoInput): deleteVideoPayload

@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/products",
-      "handler": "products.index",
+      "handler": "products.find",
       "config": {
         "policies": []
       }
