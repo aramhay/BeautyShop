@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shampoo_conditioners",
+  "info": {
+    "name": "ShampooConditioner"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Shampoo": {
+      "collection": "products"
+    },
+    "Conditioner": {
+      "collection": "products"
+    }
+  }
+}

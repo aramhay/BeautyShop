@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "korperpfleges",
+  "info": {
+    "name": "Korperpflege"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "BodyButter": {
+      "collection": "products"
+    },
+    "BodyOil": {
+      "collection": "products"
+    },
+    "Deodorant": {
+      "collection": "products"
+    },
+    "DuschenBaden": {
+      "collection": "products"
+    },
+    "Peeling": {
+      "collection": "products"
+    },
+    "Pflegen": {
+      "collection": "products"
+    }
+  }
+}

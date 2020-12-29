@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/intensivpfleges",
+      "handler": "intensivpflege.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/intensivpfleges/count",
+      "handler": "intensivpflege.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/intensivpfleges/:id",
+      "handler": "intensivpflege.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/intensivpfleges",
+      "handler": "intensivpflege.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/intensivpfleges/:id",
+      "handler": "intensivpflege.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/intensivpfleges/:id",
+      "handler": "intensivpflege.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

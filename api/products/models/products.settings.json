@@ -25,9 +25,6 @@
       "plugin": "upload",
       "required": false
     },
-    "new": {
-      "type": "boolean"
-    },
     "clean_product": {
       "type": "boolean"
     },
@@ -43,9 +40,15 @@
     "for_sale_count": {
       "type": "biginteger"
     },
-    "paruyr_cart": {
-      "via": "product",
-      "model": "paruyr-cart"
+    "unit": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "biginteger"
+    },
+    "type_test": {
+      "columnName": "id",
+      "model": "type-test"
     }
   }
 }

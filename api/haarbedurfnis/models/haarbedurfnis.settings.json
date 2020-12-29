@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "haarbedurfnis",
+  "info": {
+    "name": "Haarbedurfnis"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Loremipsum": {
+      "collection": "products"
+    }
+  }
+}

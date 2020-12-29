@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hande-fusses",
+      "handler": "hande-fusse.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hande-fusses/count",
+      "handler": "hande-fusse.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hande-fusses/:id",
+      "handler": "hande-fusse.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/hande-fusses",
+      "handler": "hande-fusse.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hande-fusses/:id",
+      "handler": "hande-fusse.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hande-fusses/:id",
+      "handler": "hande-fusse.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

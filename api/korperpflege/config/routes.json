@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/korperpfleges",
+      "handler": "korperpflege.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/korperpfleges/count",
+      "handler": "korperpflege.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/korperpfleges/:id",
+      "handler": "korperpflege.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/korperpfleges",
+      "handler": "korperpflege.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/korperpfleges/:id",
+      "handler": "korperpflege.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/korperpfleges/:id",
+      "handler": "korperpflege.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

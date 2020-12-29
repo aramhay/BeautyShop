@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intensivpfleges",
+  "info": {
+    "name": "Intensivpflege"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Haarmaske": {
+      "collection": "products"
+    },
+    "Haarol": {
+      "collection": "products"
+    }
+  }
+}

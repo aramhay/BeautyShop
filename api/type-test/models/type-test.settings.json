@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_tests",
+  "info": {
+    "name": "type_test"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brand": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float"
+    },
+    "size": {
+      "type": "biginteger"
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "images": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

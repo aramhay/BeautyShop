@@ -592,9 +592,6 @@
               }
             }
           },
-          "new": {
-            "type": "boolean"
-          },
           "clean_product": {
             "type": "boolean"
           },
@@ -610,7 +607,13 @@
           "for_sale_count": {
             "type": "integer"
           },
-          "paruyr_cart": {
+          "unit": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "integer"
+          },
+          "type_test": {
             "required": [
               "id"
             ],
@@ -618,14 +621,20 @@
               "id": {
                 "type": "string"
               },
-              "users_permissions_user": {
+              "brand": {
                 "type": "string"
               },
-              "product": {
-                "type": "string"
+              "price": {
+                "type": "number"
               },
-              "countity": {
+              "size": {
                 "type": "integer"
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "images": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -649,9 +658,6 @@
           "price": {
             "type": "string"
           },
-          "new": {
-            "type": "boolean"
-          },
           "clean_product": {
             "type": "boolean"
           },
@@ -667,7 +673,13 @@
           "for_sale_count": {
             "type": "integer"
           },
-          "paruyr_cart": {
+          "unit": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "integer"
+          },
+          "type_test": {
             "type": "string"
           },
           "published_at": {

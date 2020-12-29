@@ -139,9 +139,6 @@
               "images": {
                 "type": "string"
               },
-              "new": {
-                "type": "boolean"
-              },
               "clean_product": {
                 "type": "boolean"
               },
@@ -157,7 +154,13 @@
               "for_sale_count": {
                 "type": "integer"
               },
-              "paruyr_cart": {
+              "unit": {
+                "type": "string"
+              },
+              "discount": {
+                "type": "integer"
+              },
+              "type_test": {
                 "type": "string"
               },
               "published_at": {
@@ -185,9 +188,6 @@
               "images": {
                 "type": "string"
               },
-              "new": {
-                "type": "boolean"
-              },
               "clean_product": {
                 "type": "boolean"
               },
@@ -203,7 +203,13 @@
               "for_sale_count": {
                 "type": "integer"
               },
-              "paruyr_cart": {
+              "unit": {
+                "type": "string"
+              },
+              "discount": {
+                "type": "integer"
+              },
+              "type_test": {
                 "type": "string"
               },
               "published_at": {

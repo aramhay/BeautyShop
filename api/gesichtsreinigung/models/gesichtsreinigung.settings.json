@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gesichtsreinigungs",
+  "info": {
+    "name": "Gesichtsreinigung"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Gesichtswasser": {
+      "collection": "products"
+    },
+    "Peeling": {
+      "collection": "products"
+    }
+  }
+}

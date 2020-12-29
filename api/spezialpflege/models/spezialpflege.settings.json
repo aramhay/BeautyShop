@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spezialpfleges",
+  "info": {
+    "name": "Spezialpflege"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "LoremIpsum": {
+      "collection": "products"
+    }
+  }
+}

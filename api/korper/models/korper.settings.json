@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "korpers",
+  "info": {
+    "name": "Korper"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "reinigung": {
+      "model": "reinigung"
+    },
+    "korperpflege": {
+      "model": "korperpflege"
+    },
+    "hande_fusse": {
+      "model": "hande-fusse"
+    },
+    "Sonnenschutz": {
+      "collection": "products"
+    }
+  }
+}

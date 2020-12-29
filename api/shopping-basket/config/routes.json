@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shopping-baskets",
+      "handler": "shopping-basket.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shopping-baskets/:userid",
+      "handler": "shopping-basket.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+ 
+    {
+      "method": "POST",
+      "path": "/shopping-baskets",
+      "handler": "shopping-basket.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shopping-baskets/:userid/:productid",
+      "handler": "shopping-basket.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
+
+
+

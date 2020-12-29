@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/shampoo-conditioners",
+      "handler": "shampoo-conditioner.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shampoo-conditioners/count",
+      "handler": "shampoo-conditioner.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/shampoo-conditioners/:id",
+      "handler": "shampoo-conditioner.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/shampoo-conditioners",
+      "handler": "shampoo-conditioner.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/shampoo-conditioners/:id",
+      "handler": "shampoo-conditioner.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shampoo-conditioners/:id",
+      "handler": "shampoo-conditioner.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

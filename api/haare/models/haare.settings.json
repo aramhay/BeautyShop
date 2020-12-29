@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "haares",
+  "info": {
+    "name": "Haare"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "shampoo_conditioner": {
+      "model": "shampoo-conditioner"
+    },
+    "intensivpflege": {
+      "model": "intensivpflege"
+    },
+    "styling": {
+      "model": "styling"
+    },
+    "haarbedurfni": {
+      "model": "haarbedurfnis"
+    },
+    "spezialpflege": {
+      "model": "spezialpflege"
+    }
+  }
+}

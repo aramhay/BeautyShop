@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stylings",
+  "info": {
+    "name": "Styling"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Haarspray": {
+      "collection": "products"
+    },
+    "Pomade": {
+      "collection": "products"
+    },
+    "Saltspray": {
+      "collection": "products"
+    }
+  }
+}

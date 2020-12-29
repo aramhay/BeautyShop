@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hautbedurfnis",
+  "info": {
+    "name": "Hautbedurfnis"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Hautprobleme": {
+      "collection": "products"
+    }
+  }
+}

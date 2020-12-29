@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/haarbedurfnis",
+      "handler": "haarbedurfnis.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/haarbedurfnis/count",
+      "handler": "haarbedurfnis.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/haarbedurfnis/:id",
+      "handler": "haarbedurfnis.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/haarbedurfnis",
+      "handler": "haarbedurfnis.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/haarbedurfnis/:id",
+      "handler": "haarbedurfnis.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/haarbedurfnis/:id",
+      "handler": "haarbedurfnis.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

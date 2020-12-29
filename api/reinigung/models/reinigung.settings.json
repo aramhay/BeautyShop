@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reinigungs",
+  "info": {
+    "name": "Reinigung"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Bodylotion": {
+      "collection": "products"
+    },
+    "Seife": {
+      "collection": "products"
+    }
+  }
+}
