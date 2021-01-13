@@ -49,6 +49,14 @@
     "type_test": {
       "columnName": "id",
       "model": "type-test"
+    },
+    "category": {
+      "columnName": "id",
+      "model": "category"
+    },
+    "sub_category": {
+      "columnName": "id",
+      "model": "sub-category"
     }
   }
 }

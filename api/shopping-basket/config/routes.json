@@ -26,6 +26,23 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/shopping-baskets/gift-wrap",
+      "handler": "shopping-basket.create_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/shopping-basket-gift-wrap/:userid",
+      "handler": "shopping-basket.delete_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    },
+   
+    {
       "method": "DELETE",
       "path": "/shopping-baskets/:userid/:productid",
       "handler": "shopping-basket.delete",

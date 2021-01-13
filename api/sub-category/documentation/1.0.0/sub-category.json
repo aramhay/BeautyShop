@@ -1,18 +1,19 @@
 {
   "paths": {
-    "/products": {
+    "/sub-categories": {
       "get": {
         "deprecated": false,
-        "description": "Find all the products's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve products document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Products"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Products"
+          "Sub-category"
         ],
         "parameters": [
           {
@@ -194,14 +195,18 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new products record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve products document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -239,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Products"
+          "Sub-category"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProducts"
+                "$ref": "#/components/schemas/NewSub-category"
               }
             }
           }
         }
       }
     },
-    "/productssubcategory/{id}": {
+    "/sub-categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,158 +311,26 @@
         },
         "summary": "",
         "tags": [
-          "Products"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/productscategory/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Products"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/products/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of products documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve products document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Products"
+          "Sub-category"
         ],
         "parameters": []
       }
     },
-    "/products/{id}": {
+    "/sub-categories/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one products record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve products document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -495,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Products"
+          "Sub-category"
         ],
         "parameters": [
           {
@@ -512,14 +385,18 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single products record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve products document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -557,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Products"
+          "Sub-category"
         ],
         "requestBody": {
           "description": "",
@@ -565,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProducts"
+                "$ref": "#/components/schemas/NewSub-category"
               }
             }
           }
@@ -585,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single products record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single products based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -631,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Products"
+          "Sub-category"
         ],
         "parameters": [
           {
@@ -650,187 +527,17 @@
   },
   "components": {
     "schemas": {
-      "Products": {
+      "Sub-category": {
         "required": [
-          "id"
+          "id",
+          "SubCategoryName"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "price": {
+          "SubCategoryName": {
             "type": "string"
-          },
-          "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "clean_product": {
-            "type": "boolean"
-          },
-          "company": {
-            "type": "string"
-          },
-          "energy_kapseln": {
-            "type": "boolean"
-          },
-          "kapseln": {
-            "type": "boolean"
-          },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
-            "type": "string"
-          },
-          "discount": {
-            "type": "integer"
-          },
-          "type_test": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "size": {
-                "type": "integer"
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "images": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "category": {
-            "required": [
-              "id",
-              "CategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "CategoryName": {
-                "type": "string"
-              },
-              "sub_categories": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "sub_category": {
-            "required": [
-              "id",
-              "SubCategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "SubCategoryName": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -838,39 +545,12 @@
           }
         }
       },
-      "NewProducts": {
+      "NewSub-category": {
+        "required": [
+          "SubCategoryName"
+        ],
         "properties": {
-          "price": {
-            "type": "string"
-          },
-          "clean_product": {
-            "type": "boolean"
-          },
-          "company": {
-            "type": "string"
-          },
-          "energy_kapseln": {
-            "type": "boolean"
-          },
-          "kapseln": {
-            "type": "boolean"
-          },
-          "for_sale_count": {
-            "type": "integer"
-          },
-          "unit": {
-            "type": "string"
-          },
-          "discount": {
-            "type": "integer"
-          },
-          "type_test": {
-            "type": "string"
-          },
-          "category": {
-            "type": "string"
-          },
-          "sub_category": {
+          "SubCategoryName": {
             "type": "string"
           },
           "published_at": {
@@ -887,9 +567,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Products"
-    }
-  ]
+  "tags": []
 }

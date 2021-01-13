@@ -8,6 +8,24 @@
         "policies": []
       }
     },
+
+    
+    {
+      "method": "GET",
+      "path": "/productssubcategory/:id",
+      "handler": "products.findSubCategoryProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/productscategory/:id",
+      "handler": "products.findCategoryProducts",
+      "config": {
+        "policies": []
+      }
+    },
     
     {
       "method": "GET",

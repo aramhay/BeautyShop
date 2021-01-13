@@ -235,6 +235,12 @@
               "type_test": {
                 "type": "string"
               },
+              "category": {
+                "type": "string"
+              },
+              "sub_category": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

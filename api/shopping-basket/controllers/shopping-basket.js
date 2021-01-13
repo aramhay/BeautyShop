@@ -11,6 +11,8 @@ module.exports = {
      */
 
     async findOne(ctx) {
+         console.log(  strapi.services);
+
         const userid = ctx.params.userid;
         const knex = strapi.connections.default;
         const result = await knex('shopping_baskets')
@@ -18,7 +20,13 @@ module.exports = {
             .join('products', 'products.id', 'shopping_baskets.product')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'shopping_baskets.product')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('shopping_baskets.id', "shopping_baskets.quantity", 'products.company', 'products.id', 'products.price', 'products.energy_kapseln', 'products.discount','upload_file.url as image_url',);
+            .select('shopping_baskets.id', "shopping_baskets.quantity", 'products.company', 'products.id', 'products.price', 'products.energy_kapseln', 'products.discount', 'upload_file.url as image_url',);
+
+        const gift_wrap = await knex('shopping_baskets')
+            .where('shopping_baskets.users_permissions_user', `${userid}`)
+            .join('gift_wraps', 'gift_wraps.id', 'shopping_baskets.product')
+            .select('gift_wraps.id');
+
         let cost = 0
         const shipping = await strapi.services.discount.find()
         result.map((e) => { cost += e.price * e.quantity - (e.price * e.quantity * e.discount / 100) })
@@ -26,11 +34,20 @@ module.exports = {
             cost += shipping.discount
         }
         if (result.length === 0) cost = 0;
-        result.push({ cost })
+        if (gift_wrap.length !== 0) {
+            cost+=5; 
+            let gift_wrap_data = await strapi.services['gift-wrap'].find({ id: gift_wrap[0].id })
+            result.push({
+                "id": gift_wrap_data[0].id,
+                "price": gift_wrap_data[0].price,
+                "name": gift_wrap_data[0].Name,
+                "text": gift_wrap_data[0].Text,
+                "images": gift_wrap_data[0].images[0].url
+            })
+        } result.push({ cost })
         return (result)
     },
     async create(ctx) {
-        console.log(ctx.state)
         let entity;
         let id = ctx.request.body.product
         let exist = await strapi.services.products.find({ id })
@@ -53,9 +70,27 @@ module.exports = {
 
     },
 
+    async create_gift_wrap(ctx) {
+        ctx.request.body.product = 1;
+        await strapi.services['shopping-basket'].create(ctx.request.body);
+        return { success: true };
+    },
+
+    async delete_gift_wrap(ctx) {
+        let { userid } = ctx.params
+        const knex = strapi.connections.default;
+        const gift_wrap = await knex('shopping_baskets')
+            .where('shopping_baskets.users_permissions_user', `${userid}`)
+            .join('gift_wraps', 'gift_wraps.id', 'shopping_baskets.product')
+            .select('shopping_baskets.id');
+        await strapi.services['shopping-basket'].delete({ id: gift_wrap[0].id });
+        return ({ success: true, message: 'success' })
+    },
+
+
     async delete(ctx) {
         let { userid, productid } = ctx.params
-        let entity = await strapi.services['shopping-basket'].delete({ users_permissions_user: userid, product: productid });
+        await strapi.services['shopping-basket'].delete({ users_permissions_user: userid, product: productid });
         return ({ success: true, message: "deleted" })
     }
 
