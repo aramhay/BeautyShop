@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/menu-itemssss",
+      "path": "/navbaritems",
       "handler": "menu-item.findMenuItem",
       "config": {
         "policies": []
