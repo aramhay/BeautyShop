@@ -1,33 +1,6 @@
 'use strict';
 
 const { sanitizeEntity } = require('strapi-utils');
-
-
-// const mergeFnc = data => {
-//   return data.reduce((acc, el) => {
-//     const findedIndex = acc.findIndex(e => e.CategoryName === el.CategoryName)
-
-//     if (findedIndex === -1) {
-//       const a = { ...el, SubCategoryName: [{ id: el.id, SubCategoryName: el.SubCategoryName }] }
-
-//       acc.push(a)
-//     } else {
-//       const r = { id: el.id, SubCategoryName: el.SubCategoryName }
-//       acc[findedIndex].SubCategoryName.push(r)
-//     }
-
-//     return acc
-//   }, [])
-// }
-// const TransformFnc = item => {
-//   return {
-//     menu_item_id: item.menu_item_id,
-//     category_id: item.category_id,
-//     CategoryName: item.CategoryName,
-//     SubCategoryName: item.SubCategoryName
-//   }
-// }
-
 const e = (data1, data2) => {
   data1.forEach(cat1 => {
       cat1.categories.forEach(subCat => {
@@ -49,11 +22,7 @@ module.exports = {
   //         .leftJoin('menu_items__categories', 'menu_items.id', 'menu_items__categories.menu_item_id')
   //         .leftJoin('categories', 'menu_items__categories.category_id', 'menu_items.id')
   //         .leftJoin('sub_categories', 'menu_items__categories.category_id', 'menu_items.id')
-
-
-
   //     // item.map()
-
   //     return item
   // },
 

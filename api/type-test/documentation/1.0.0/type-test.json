@@ -547,6 +547,64 @@
           "quantity": {
             "type": "integer"
           },
+          "product": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "brand": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "discount": {
+                "type": "integer"
+              },
+              "type_test": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "sub_category": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "images": {
             "required": [
               "id",
@@ -633,6 +691,9 @@
           },
           "quantity": {
             "type": "integer"
+          },
+          "product": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

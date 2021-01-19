@@ -209,12 +209,15 @@
                 "type": "string"
               },
               "images": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "clean_product": {
                 "type": "boolean"
               },
-              "company": {
+              "brand": {
                 "type": "string"
               },
               "energy_kapseln": {

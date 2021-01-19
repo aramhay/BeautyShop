@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "type_tests",
   "info": {
-    "name": "type_test"
+    "name": "type_test",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -21,6 +22,10 @@
     },
     "quantity": {
       "type": "biginteger"
+    },
+    "product": {
+      "via": "type_test",
+      "model": "products"
     },
     "images": {
       "model": "file",

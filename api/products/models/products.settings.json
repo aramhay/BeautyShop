@@ -15,7 +15,7 @@
       "type": "string"
     },
     "images": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -28,7 +28,7 @@
     "clean_product": {
       "type": "boolean"
     },
-    "company": {
+    "brand": {
       "type": "string"
     },
     "energy_kapseln": {
@@ -48,7 +48,8 @@
     },
     "type_test": {
       "columnName": "id",
-      "model": "type-test"
+      "model": "type-test",
+      "via": "product"
     },
     "category": {
       "columnName": "id",

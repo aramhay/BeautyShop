@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/13/2021 5:39:23 PM"
+    "x-generation-date": "01/19/2021 4:28:47 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4190,6 +4190,74 @@
         ]
       }
     },
+    "/findTypetests/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/productscategory/{id}": {
       "get": {
         "deprecated": false,
@@ -4913,6 +4981,77 @@
         ]
       }
     },
+    "/shopping-baskets/product_samples": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Shopping-basket"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/shopping-baskets/gift-wrap": {
       "post": {
         "deprecated": false,
@@ -5038,6 +5177,81 @@
         "parameters": [
           {
             "name": "userid",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/shopping-baskets/product_samples/{userid}/{sampleid}": {
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Shopping-basket"
+        ],
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sampleid",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -8857,10 +9071,12 @@
             "type": "string"
           },
           "Name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 50
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 150
           },
           "status_voucher": {
             "type": "boolean"
@@ -8918,12 +9134,15 @@
                 "type": "string"
               },
               "images": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "clean_product": {
                 "type": "boolean"
               },
-              "company": {
+              "brand": {
                 "type": "string"
               },
               "energy_kapseln": {
@@ -8970,10 +9189,12 @@
       "NewDiscount-codes": {
         "properties": {
           "Name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 50
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 150
           },
           "status_voucher": {
             "type": "boolean"
@@ -9145,12 +9366,15 @@
                 "type": "string"
               },
               "images": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "clean_product": {
                 "type": "boolean"
               },
-              "company": {
+              "brand": {
                 "type": "string"
               },
               "energy_kapseln": {
@@ -9607,76 +9831,79 @@
             "type": "string"
           },
           "images": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
           "clean_product": {
             "type": "boolean"
           },
-          "company": {
+          "brand": {
             "type": "string"
           },
           "energy_kapseln": {
@@ -9713,6 +9940,9 @@
               },
               "quantity": {
                 "type": "integer"
+              },
+              "product": {
+                "type": "string"
               },
               "images": {
                 "type": "string"
@@ -9791,7 +10021,7 @@
           "clean_product": {
             "type": "boolean"
           },
-          "company": {
+          "brand": {
             "type": "string"
           },
           "energy_kapseln": {
@@ -9901,12 +10131,15 @@
                 "type": "string"
               },
               "images": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "clean_product": {
                 "type": "boolean"
               },
-              "company": {
+              "brand": {
                 "type": "string"
               },
               "energy_kapseln": {
@@ -9981,6 +10214,43 @@
               }
             }
           },
+          "type_test": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "brand": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "size": {
+                "type": "integer"
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "product": {
+                "type": "string"
+              },
+              "images": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9999,6 +10269,9 @@
             "type": "integer"
           },
           "gift_wrap": {
+            "type": "string"
+          },
+          "type_test": {
             "type": "string"
           },
           "published_at": {
@@ -10070,6 +10343,64 @@
           },
           "quantity": {
             "type": "integer"
+          },
+          "product": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "clean_product": {
+                "type": "boolean"
+              },
+              "brand": {
+                "type": "string"
+              },
+              "energy_kapseln": {
+                "type": "boolean"
+              },
+              "kapseln": {
+                "type": "boolean"
+              },
+              "for_sale_count": {
+                "type": "integer"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "discount": {
+                "type": "integer"
+              },
+              "type_test": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "sub_category": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "images": {
             "required": [
@@ -10157,6 +10488,9 @@
           },
           "quantity": {
             "type": "integer"
+          },
+          "product": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

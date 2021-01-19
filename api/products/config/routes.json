@@ -20,6 +20,14 @@
     },
     {
       "method": "GET",
+      "path": "/findTypetests/:id",
+      "handler": "products.findTypetests",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/productscategory/:id",
       "handler": "products.findCategoryProducts",
       "config": {

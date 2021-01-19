@@ -536,10 +536,12 @@
             "type": "string"
           },
           "Name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 50
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 150
           },
           "status_voucher": {
             "type": "boolean"
@@ -597,12 +599,15 @@
                 "type": "string"
               },
               "images": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "clean_product": {
                 "type": "boolean"
               },
-              "company": {
+              "brand": {
                 "type": "string"
               },
               "energy_kapseln": {
@@ -649,10 +654,12 @@
       "NewDiscount-codes": {
         "properties": {
           "Name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 50
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 150
           },
           "status_voucher": {
             "type": "boolean"

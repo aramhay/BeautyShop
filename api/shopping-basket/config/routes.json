@@ -15,7 +15,16 @@
       "config": {
         "policies": []
       }
+    },   
+    {
+      "method": "POST",
+      "path": "/shopping-baskets/product_samples",
+      "handler": "shopping-basket.create_product_samples",
+      "config": {
+        "policies": []
+      }
     },
+
  
     {
       "method": "POST",
@@ -37,6 +46,14 @@
       "method": "DELETE",
       "path": "/shopping-basket-gift-wrap/:userid",
       "handler": "shopping-basket.delete_gift_wrap",
+      "config": {
+        "policies": []
+      }
+    }, 
+    {
+      "method": "DELETE",
+      "path": "/shopping-baskets/product_samples/:userid/:sampleid",
+      "handler": "shopping-basket.delete_product_samples",
       "config": {
         "policies": []
       }
