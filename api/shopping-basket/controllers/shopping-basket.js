@@ -11,6 +11,7 @@ module.exports = {
      */
 
     async findOne(ctx) {
+        //  console.log(await strapi.plugins['users-permissions'].services.user.fetchAll());
         //  console.log(  strapi.services);
 
         const userid = ctx.params.userid;
@@ -31,7 +32,6 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'shopping_baskets.type_test')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('type_tests.id', 'type_tests.brand', 'type_tests.price', 'type_tests.size', 'upload_file.url as image_url')
-        // console.log(typeTest);
 
         function getUniqueListBy(arr) {
             return [...new Map(arr.map(item => [item['id'], item])).values()]
@@ -44,15 +44,22 @@ module.exports = {
 
 
         let cost = 0
+        let type_test_cost = 0
         const shipping = await strapi.services.discount.find()
+        let permanent_discount = await strapi.services['permanent-discount'].find()
+        let user = await strapi.plugins['users-permissions'].services.user.fetchAll({ id: userid })
         res.map((e) => {
             if (e.quantity !== undefined) {
-                { cost += e?.price * e.quantity - (e?.price * e.quantity * e?.discount / 100) }
-            } else cost += e.price
+                cost += e?.price * e.quantity - (e?.price * e.quantity * e?.discount / 100)
+            } else type_test_cost += e.price
         })
+
+        if (user[0].regular_customer) { cost = cost - cost * permanent_discount.discount / 100 } /*regular costumer klini en jamanak erb order historium patverneri qanaky mec lini permanent_discount i qanakic */
+
         if (cost < shipping.minprice) {
             cost += shipping.discount
         }
+        cost += type_test_cost
         if (res.length === 0) cost = 0;
         if (gift_wrap.length !== 0) {
             cost += 5;

@@ -1320,6 +1320,10 @@
                 }
               }
             }
+          },
+          "regular_customer": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -1361,6 +1365,10 @@
           },
           "role": {
             "type": "string"
+          },
+          "regular_customer": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

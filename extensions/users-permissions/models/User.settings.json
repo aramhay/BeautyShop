@@ -69,6 +69,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "regular_customer": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

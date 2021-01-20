@@ -738,6 +738,9 @@
                   "type": "string"
                 }
               },
+              "regular_customer": {
+                "type": "boolean"
+              },
               "created_by": {
                 "type": "string"
               },
