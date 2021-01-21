@@ -13,7 +13,8 @@
   "attributes": {
     "Name": {
       "type": "string",
-      "maxLength": 50
+      "maxLength": 50,
+      "default": "test"
     },
     "Description": {
       "type": "richtext",

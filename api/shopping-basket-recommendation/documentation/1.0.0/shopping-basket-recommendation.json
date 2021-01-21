@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/discount-codes": {
+    "/shopping-basket-recommendations": {
       "get": {
         "deprecated": false,
-        "description": "Find all the discount-codes's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new discount-codes record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDiscount-codes"
+                "$ref": "#/components/schemas/NewShopping-basket-recommendation"
               }
             }
           }
         }
       }
     },
-    "/discount-codes/count": {
+    "/shopping-basket-recommendations/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of discount-codes documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,18 +311,18 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "parameters": []
       }
     },
-    "/discount-codes/{id}": {
+    "/shopping-basket-recommendations/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one discount-codes record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "parameters": [
           {
@@ -385,10 +385,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single discount-codes record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve discount-codes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDiscount-codes"
+                "$ref": "#/components/schemas/NewShopping-basket-recommendation"
               }
             }
           }
@@ -462,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single discount-codes record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single discount-codes based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Discount-codes"
+          "Shopping-basket-recommendation"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Discount-codes": {
+      "Shopping-basket-recommendation": {
         "required": [
           "id"
         ],
@@ -535,116 +535,14 @@
           "id": {
             "type": "string"
           },
-          "Name": {
-            "type": "string",
-            "default": "test",
-            "maxLength": 50
+          "to": {
+            "type": "string"
           },
-          "Description": {
-            "type": "string",
-            "maxLength": 150
+          "from": {
+            "type": "string"
           },
-          "status_voucher": {
-            "type": "boolean"
-          },
-          "unique_multiple": {
-            "type": "boolean"
-          },
-          "multiple_redemptions": {
-            "type": "boolean"
-          },
-          "one_redemption": {
-            "type": "boolean"
-          },
-          "redeem_until_usedup": {
+          "current_shopping_basket_product_id": {
             "type": "object"
-          },
-          "single_redemption": {
-            "type": "object"
-          },
-          "Minimum_order_value": {
-            "type": "integer"
-          },
-          "valid_from_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Valid_to_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "code_character_length": {
-            "type": "integer"
-          },
-          "amount_discount": {
-            "type": "integer"
-          },
-          "type_of_discount": {
-            "type": "string",
-            "enum": [
-              "prozentual",
-              "absolut",
-              "Stuck",
-              "Versand"
-            ]
-          },
-          "products": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "energy_kapseln": {
-                "type": "boolean"
-              },
-              "kapseln": {
-                "type": "boolean"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -652,63 +550,16 @@
           }
         }
       },
-      "NewDiscount-codes": {
+      "NewShopping-basket-recommendation": {
         "properties": {
-          "Name": {
-            "type": "string",
-            "default": "test",
-            "maxLength": 50
-          },
-          "Description": {
-            "type": "string",
-            "maxLength": 150
-          },
-          "status_voucher": {
-            "type": "boolean"
-          },
-          "unique_multiple": {
-            "type": "boolean"
-          },
-          "multiple_redemptions": {
-            "type": "boolean"
-          },
-          "one_redemption": {
-            "type": "boolean"
-          },
-          "redeem_until_usedup": {
-            "type": "object"
-          },
-          "single_redemption": {
-            "type": "object"
-          },
-          "Minimum_order_value": {
-            "type": "integer"
-          },
-          "valid_from_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "Valid_to_date_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "code_character_length": {
-            "type": "integer"
-          },
-          "amount_discount": {
-            "type": "integer"
-          },
-          "type_of_discount": {
-            "type": "string",
-            "enum": [
-              "prozentual",
-              "absolut",
-              "Stuck",
-              "Versand"
-            ]
-          },
-          "products": {
+          "to": {
             "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "current_shopping_basket_product_id": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",

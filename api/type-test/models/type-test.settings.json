@@ -24,8 +24,9 @@
       "type": "biginteger"
     },
     "product": {
-      "via": "type_test",
-      "model": "products"
+      "columnName": "id",
+      "model": "products",
+      "via": "type_test"
     },
     "images": {
       "model": "file",

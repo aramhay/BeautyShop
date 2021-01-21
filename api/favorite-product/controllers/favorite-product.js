@@ -7,7 +7,7 @@ module.exports = {
         const id = ctx.params.userid
         let entity = await strapi.services['favorite-product'].find({ users_permissions_user: id })
         let favoriteproduct = []
-        entity.map((e) => favoriteproduct.push(e.product))
+        entity.map((e) => { favoriteproduct.push(e.product), console.log(e)})
         return favoriteproduct
     },
 
