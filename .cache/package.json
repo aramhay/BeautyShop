@@ -1,21 +1,51 @@
 {
-  "name": "strapi-admin",
-  "version": "3.3.4",
-  "description": "Strapi Admin",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/strapi/strapi-admin.git"
+  "_from": "strapi-admin@3.4.3",
+  "_id": "strapi-admin@3.4.3",
+  "_inBundle": false,
+  "_integrity": "sha512-lJPQEfF3gcOLUpmzsrIBChHM1EBbL6U9q2bqD71mcGByzWW8gbaEbMqTYxxqU7SDDAIfK0l224BKskFFvKPEFw==",
+  "_location": "/strapi-admin",
+  "_phantomChildren": {
+    "@babel/runtime": "7.12.5",
+    "@sindresorhus/slugify": "1.1.0",
+    "date-fns": "2.16.1",
+    "fn-name": "3.0.0",
+    "is-docker": "2.1.1",
+    "lodash": "4.17.20",
+    "lodash-es": "4.17.20",
+    "pino": "4.17.6",
+    "pluralize": "8.0.0",
+    "property-expr": "2.0.4",
+    "synchronous-promise": "2.0.15",
+    "toposort": "2.0.2"
   },
-  "scripts": {
-    "test": "echo \"no tests yet\"",
-    "develop": "webpack-dev-server --config webpack.config.dev.js",
-    "develop:ce": "STRAPI_DISABLE_EE=true webpack-dev-server --config webpack.config.dev.js"
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "strapi-admin@3.4.3",
+    "name": "strapi-admin",
+    "escapedName": "strapi-admin",
+    "rawSpec": "3.4.3",
+    "saveSpec": null,
+    "fetchSpec": "3.4.3"
   },
-  "main": "index.js",
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/strapi-admin/-/strapi-admin-3.4.3.tgz",
+  "_shasum": "85b49d3582b4f441d17428035d740ba7cde1487a",
+  "_spec": "strapi-admin@3.4.3",
+  "_where": "/home/ars-systems/Desktop/my",
+  "author": {
+    "name": "Strapi"
+  },
+  "bugs": {
+    "url": "https://github.com/strapi/strapi-admin/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-async-generator-functions": "^7.10.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "@babel/plugin-transform-runtime": "^7.9.0",
@@ -23,12 +53,12 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@babel/runtime": "^7.9.2",
-    "@buffetjs/core": "3.3.1",
-    "@buffetjs/custom": "3.3.1",
-    "@buffetjs/hooks": "3.3.1",
-    "@buffetjs/icons": "3.3.1",
-    "@buffetjs/styles": "3.3.1",
-    "@buffetjs/utils": "3.3.1",
+    "@buffetjs/core": "3.3.3-next.2",
+    "@buffetjs/custom": "3.3.3-next.2",
+    "@buffetjs/hooks": "3.3.3-next.2",
+    "@buffetjs/icons": "3.3.3-next.2",
+    "@buffetjs/styles": "3.3.3-next.2",
+    "@buffetjs/utils": "3.3.3-next.2",
     "@casl/ability": "^4.1.5",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -36,18 +66,18 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "autoprefixer": "^9.8.6",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
     "chalk": "^2.4.2",
     "chokidar": "^3.2.1",
     "classnames": "^2.2.6",
-    "cross-env": "^5.0.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^2.1.1",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "execa": "^1.0.0",
-    "file-loader": "^6.1.0",
+    "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
     "formik": "^2.2.5",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -63,13 +93,14 @@
     "jsonwebtoken": "8.5.1",
     "koa-compose": "4.1.0",
     "koa-passport": "4.1.3",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "match-sorter": "^4.0.2",
     "mini-css-extract-plugin": "^0.6.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.1",
     "p-map": "4.0.0",
     "passport-local": "1.0.0",
     "prop-types": "^15.7.2",
+    "qs": "6.9.4",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dnd": "^10.0.2",
@@ -83,7 +114,7 @@
     "react-redux": "7.2.0",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "react-select": "^3.0.8",
+    "react-select": "^3.1.1",
     "react-transition-group": "4.4.1",
     "react-virtualized": "^9.21.2",
     "reactstrap": "8.4.1",
@@ -92,9 +123,10 @@
     "redux-saga": "^0.16.0",
     "reselect": "^4.0.0",
     "sanitize.css": "^4.1.0",
+    "semver": "7.3.4",
     "sift": "13.1.10",
-    "strapi-helper-plugin": "3.3.4",
-    "strapi-utils": "3.3.4",
+    "strapi-helper-plugin": "3.4.3",
+    "strapi-utils": "3.4.3",
     "style-loader": "^0.23.1",
     "styled-components": "^5.0.0",
     "terser-webpack-plugin": "^1.2.3",
@@ -106,22 +138,30 @@
     "webpackbar": "^4.0.0",
     "yup": "^0.27.0"
   },
-  "author": {
-    "name": "Strapi",
-    "email": "",
-    "url": ""
-  },
-  "maintainers": [
-    {
-      "name": "Strapi",
-      "email": "",
-      "url": ""
-    }
-  ],
+  "deprecated": false,
+  "description": "Strapi Admin",
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
+  "gitHead": "553d64cafd59d2076249ec22526a5887e5676677",
+  "homepage": "https://github.com/strapi/strapi-admin#readme",
   "license": "SEE LICENSE IN LICENSE",
-  "gitHead": "9b28991d8a834fde3b1e48b6c126aa23003e4f1a"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "Strapi"
+    }
+  ],
+  "name": "strapi-admin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strapi/strapi-admin.git"
+  },
+  "scripts": {
+    "develop": "webpack-dev-server --config webpack.config.dev.js",
+    "develop:ce": "STRAPI_DISABLE_EE=true webpack-dev-server --config webpack.config.dev.js",
+    "test": "echo \"no tests yet\""
+  },
+  "version": "3.4.3"
 }
