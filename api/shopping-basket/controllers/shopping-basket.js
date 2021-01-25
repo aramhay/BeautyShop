@@ -112,9 +112,9 @@ module.exports = {
             if (el.users_permissions_user == ctx.request.body.users_permissions_user && el.type_test !== null) count += 1
         })
         if (count < 5) {
-            let tr = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0]?.id, quantity: 1 });
+            let tr = await strapi.services['shopping-basket'].find({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0].id, quantity: 1 });
             if (tr.length == 0) {
-                await strapi.services['shopping-basket'].create({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0]?.id, quantity: 1 });
+                await strapi.services['shopping-basket'].create({ users_permissions_user: ctx.request.body.users_permissions_user, type_test: products[0].id, quantity: 1 });
             } else return {
                 success: false,
                 message: "Max 1 sample per fragrance per order"
