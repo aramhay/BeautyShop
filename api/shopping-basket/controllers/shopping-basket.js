@@ -50,7 +50,7 @@ module.exports = {
         let user = await strapi.plugins['users-permissions'].services.user.fetchAll({ id: userid })
         res.map((e) => {
             if (e.quantity !== undefined) {
-                cost += e?.price * e.quantity - (e?.price * e.quantity * e?.discount / 100)
+                cost += e.price * e.quantity - (e.price * e.quantity * e.discount / 100)
             } else type_test_cost += e.price
         })
 

@@ -58,6 +58,10 @@
     "sub_category": {
       "columnName": "id",
       "model": "sub-category"
+    },
+    "menu_item": {
+      "columnName": "id",
+      "model": "menu-item"
     }
   }
 }

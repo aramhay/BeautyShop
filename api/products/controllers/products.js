@@ -58,4 +58,21 @@ module.exports = {
         return getUniqueListBy(products)
     },
 
+    async findMenuItemProducts(ctx) {
+        function getUniqueListBy(arr) {
+            return [...new Map(arr.map(item => [item['id'], item])).values()]
+        }
+        const knex = strapi.connections.default;
+        const { id } = ctx.params;
+        const products = await knex('products')
+            .where('menu_item', `${id}`)
+            .join('menu_items', 'menu_items.id', 'products.menu_item')
+            .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
+            .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
+            .select('products.id', 'products.price', 'products.clean_product',
+                    'products.brand', 'products.energy_kapseln', 'products.kapseln',
+                    'products.unit', 'products.discount', 'upload_file.url as image_url');
+        return getUniqueListBy(products)
+    },
+
 };

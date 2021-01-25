@@ -594,6 +594,9 @@
               "sub_category": {
                 "type": "string"
               },
+              "menu_item": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },

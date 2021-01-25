@@ -34,6 +34,14 @@
         "policies": []
       }
     },
+    {
+      "method": "GET",
+      "path": "/productsmenu/:id",
+      "handler": "products.findMenuItemProducts",
+      "config": {
+        "policies": []
+      }
+    },
     
     {
       "method": "GET",

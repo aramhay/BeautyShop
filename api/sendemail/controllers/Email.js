@@ -45,7 +45,7 @@ module.exports = {
         })
         return ({
             success: true,
-            message: `Shopping basket has recommended with ${username[0].username} `
+            message: `${username[0].username} has recommended  Shopping basket  \u{1F600}`
         })
     }
 
