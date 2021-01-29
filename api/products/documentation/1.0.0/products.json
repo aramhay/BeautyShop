@@ -873,9 +873,6 @@
           "brand": {
             "type": "string"
           },
-          "energy_kapseln": {
-            "type": "boolean"
-          },
           "kapseln": {
             "type": "boolean"
           },
@@ -999,6 +996,49 @@
               }
             }
           },
+          "name": {
+            "type": "string"
+          },
+          "magazin_presentation": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "images_1": {
+                "type": "string"
+              },
+              "text_1": {
+                "type": "string"
+              },
+              "text_2": {
+                "type": "string"
+              },
+              "images_2": {
+                "type": "string"
+              },
+              "position": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1015,9 +1055,6 @@
           },
           "brand": {
             "type": "string"
-          },
-          "energy_kapseln": {
-            "type": "boolean"
           },
           "kapseln": {
             "type": "boolean"
@@ -1041,6 +1078,12 @@
             "type": "string"
           },
           "menu_item": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "magazin_presentation": {
             "type": "string"
           },
           "published_at": {

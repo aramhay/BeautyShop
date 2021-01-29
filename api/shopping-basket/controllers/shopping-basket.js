@@ -21,7 +21,7 @@ module.exports = {
             .join('products', 'products.id', 'shopping_baskets.product')
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'shopping_baskets.product')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
-            .select('shopping_baskets.id', "shopping_baskets.quantity", 'products.brand', 'products.id', 'products.price', 'products.energy_kapseln', 'products.discount', 'upload_file.url as image_url',);
+            .select('shopping_baskets.id', "shopping_baskets.quantity", 'products.brand', 'products.id', 'products.price', 'products.name', 'products.discount', 'upload_file.url as image_url',);
         const gift_wrap = await knex('shopping_baskets')
             .where('shopping_baskets.users_permissions_user', `${userid}`)
             .join('gift_wraps', 'gift_wraps.id', 'shopping_baskets.product')

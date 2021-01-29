@@ -31,9 +31,6 @@
     "brand": {
       "type": "string"
     },
-    "energy_kapseln": {
-      "type": "boolean"
-    },
     "kapseln": {
       "type": "boolean"
     },
@@ -62,6 +59,13 @@
     "menu_item": {
       "columnName": "id",
       "model": "menu-item"
+    },
+    "name": {
+      "type": "string"
+    },
+    "magazin_presentation": {
+      "via": "products",
+      "model": "magazin-presentation"
     }
   }
 }

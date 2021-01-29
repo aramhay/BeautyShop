@@ -20,7 +20,7 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id', 'products.price', 'products.clean_product',
-                'products.brand', 'products.energy_kapseln', 'products.kapseln',
+                'products.brand', 'products.name', 'products.kapseln',
                 'products.unit', 'products.discount', 'upload_file.url as image_url');
         return getUniqueListBy(products)
     },
@@ -38,7 +38,7 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id', 'products.price', 'products.clean_product',
-                    'products.brand', 'products.energy_kapseln', 'products.kapseln',
+                    'products.brand', 'products.name', 'products.kapseln',
                     'products.unit', 'products.discount', 'upload_file.url as image_url');
         return getUniqueListBy(products)
     },
@@ -70,7 +70,7 @@ module.exports = {
             .leftJoin('upload_file_morph', 'upload_file_morph.related_id', 'products.id')
             .leftJoin('upload_file', 'upload_file.id', 'upload_file_morph.upload_file_id')
             .select('products.id', 'products.price', 'products.clean_product',
-                    'products.brand', 'products.energy_kapseln', 'products.kapseln',
+                    'products.brand', 'products.name', 'products.kapseln',
                     'products.unit', 'products.discount', 'upload_file.url as image_url');
         return getUniqueListBy(products)
     },

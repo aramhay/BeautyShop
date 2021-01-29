@@ -1,38 +1,15 @@
 {
-  "_from": "strapi-plugin-graphql@3.4.3",
-  "_id": "strapi-plugin-graphql@3.4.3",
-  "_inBundle": false,
-  "_integrity": "sha512-au4t2L5CGSyMH/M6jSj4CxqjzO/c+UXJZxtgXYMnmAIaX2hx+Ah6mrgHNM1H1DOYrscp302xHjt9D9Hi6V9Z/A==",
-  "_location": "/strapi-plugin-graphql",
-  "_phantomChildren": {
-    "@sindresorhus/slugify": "1.1.0",
-    "date-fns": "2.16.1",
-    "lodash": "4.17.20",
-    "pino": "4.17.6",
-    "pluralize": "8.0.0",
-    "yup": "0.29.3"
+  "name": "strapi-plugin-graphql",
+  "version": "3.4.4",
+  "description": "Adds GraphQL endpoint with default API methods.",
+  "strapi": {
+    "name": "graphql",
+    "icon": "plug",
+    "description": "Adds GraphQL endpoint with default API methods."
   },
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "strapi-plugin-graphql@3.4.3",
-    "name": "strapi-plugin-graphql",
-    "escapedName": "strapi-plugin-graphql",
-    "rawSpec": "3.4.3",
-    "saveSpec": null,
-    "fetchSpec": "3.4.3"
+  "scripts": {
+    "test": "echo \"no tests yet\""
   },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-graphql/-/strapi-plugin-graphql-3.4.3.tgz",
-  "_shasum": "371b30a33a244c218e184435b7fbdbc763e39fc7",
-  "_spec": "strapi-plugin-graphql@3.4.3",
-  "_where": "/home/ars-systems/Desktop/my",
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "bundleDependencies": false,
   "dependencies": {
     "@apollo/federation": "^0.20.7",
     "apollo-server-koa": "2.19.1",
@@ -49,34 +26,29 @@
     "koa-compose": "^4.1.0",
     "lodash": "4.17.20",
     "pluralize": "^8.0.0",
-    "strapi-utils": "3.4.3"
+    "strapi-utils": "3.4.4"
   },
-  "deprecated": false,
-  "description": "Adds GraphQL endpoint with default API methods.",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "koa": "^2.13.0",
     "rimraf": "3.0.2"
   },
+  "author": {
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
-  "gitHead": "553d64cafd59d2076249ec22526a5887e5676677",
   "license": "SEE LICENSE IN LICENSE",
-  "maintainers": [
-    {
-      "name": "A Strapi developer"
-    }
-  ],
-  "name": "strapi-plugin-graphql",
-  "scripts": {
-    "test": "echo \"no tests yet\""
-  },
-  "strapi": {
-    "name": "graphql",
-    "icon": "plug",
-    "description": "Adds GraphQL endpoint with default API methods."
-  },
-  "version": "3.4.3"
+  "gitHead": "542786f263688553cddc2e6144cc76da3497bb93"
 }

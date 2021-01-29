@@ -1,47 +1,17 @@
 {
-  "_from": "strapi-admin@3.4.3",
-  "_id": "strapi-admin@3.4.3",
-  "_inBundle": false,
-  "_integrity": "sha512-lJPQEfF3gcOLUpmzsrIBChHM1EBbL6U9q2bqD71mcGByzWW8gbaEbMqTYxxqU7SDDAIfK0l224BKskFFvKPEFw==",
-  "_location": "/strapi-admin",
-  "_phantomChildren": {
-    "@babel/runtime": "7.12.5",
-    "@sindresorhus/slugify": "1.1.0",
-    "date-fns": "2.16.1",
-    "fn-name": "3.0.0",
-    "is-docker": "2.1.1",
-    "lodash": "4.17.20",
-    "lodash-es": "4.17.20",
-    "pino": "4.17.6",
-    "pluralize": "8.0.0",
-    "property-expr": "2.0.4",
-    "synchronous-promise": "2.0.15",
-    "toposort": "2.0.2"
+  "name": "strapi-admin",
+  "version": "3.4.4",
+  "description": "Strapi Admin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strapi/strapi-admin.git"
   },
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "strapi-admin@3.4.3",
-    "name": "strapi-admin",
-    "escapedName": "strapi-admin",
-    "rawSpec": "3.4.3",
-    "saveSpec": null,
-    "fetchSpec": "3.4.3"
+  "scripts": {
+    "test": "echo \"no tests yet\"",
+    "develop": "webpack-dev-server --config webpack.config.dev.js",
+    "develop:ce": "STRAPI_DISABLE_EE=true webpack-dev-server --config webpack.config.dev.js"
   },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/strapi-admin/-/strapi-admin-3.4.3.tgz",
-  "_shasum": "85b49d3582b4f441d17428035d740ba7cde1487a",
-  "_spec": "strapi-admin@3.4.3",
-  "_where": "/home/ars-systems/Desktop/my",
-  "author": {
-    "name": "Strapi"
-  },
-  "bugs": {
-    "url": "https://github.com/strapi/strapi-admin/issues"
-  },
-  "bundleDependencies": false,
+  "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-async-generator-functions": "^7.10.5",
@@ -62,7 +32,7 @@
     "@casl/ability": "^4.1.5",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "autoprefixer": "^9.8.6",
@@ -125,8 +95,8 @@
     "sanitize.css": "^4.1.0",
     "semver": "7.3.4",
     "sift": "13.1.10",
-    "strapi-helper-plugin": "3.4.3",
-    "strapi-utils": "3.4.3",
+    "strapi-helper-plugin": "3.4.4",
+    "strapi-utils": "3.4.4",
     "style-loader": "^0.23.1",
     "styled-components": "^5.0.0",
     "terser-webpack-plugin": "^1.2.3",
@@ -138,30 +108,22 @@
     "webpackbar": "^4.0.0",
     "yup": "^0.27.0"
   },
-  "deprecated": false,
-  "description": "Strapi Admin",
+  "author": {
+    "name": "Strapi",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "Strapi",
+      "email": "",
+      "url": ""
+    }
+  ],
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
-  "gitHead": "553d64cafd59d2076249ec22526a5887e5676677",
-  "homepage": "https://github.com/strapi/strapi-admin#readme",
   "license": "SEE LICENSE IN LICENSE",
-  "main": "index.js",
-  "maintainers": [
-    {
-      "name": "Strapi"
-    }
-  ],
-  "name": "strapi-admin",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/strapi/strapi-admin.git"
-  },
-  "scripts": {
-    "develop": "webpack-dev-server --config webpack.config.dev.js",
-    "develop:ce": "STRAPI_DISABLE_EE=true webpack-dev-server --config webpack.config.dev.js",
-    "test": "echo \"no tests yet\""
-  },
-  "version": "3.4.3"
+  "gitHead": "542786f263688553cddc2e6144cc76da3497bb93"
 }

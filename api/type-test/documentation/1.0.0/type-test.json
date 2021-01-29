@@ -570,9 +570,6 @@
               "brand": {
                 "type": "string"
               },
-              "energy_kapseln": {
-                "type": "boolean"
-              },
               "kapseln": {
                 "type": "boolean"
               },
@@ -595,6 +592,12 @@
                 "type": "string"
               },
               "menu_item": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "magazin_presentation": {
                 "type": "string"
               },
               "published_at": {
