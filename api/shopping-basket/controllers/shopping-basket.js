@@ -12,7 +12,7 @@ module.exports = {
 
     async findOne(ctx) {
         //  console.log(await strapi.plugins['users-permissions'].services.user.fetchAll());
-        //  console.log(  strapi.services);
+         console.log(  strapi.services);
 
         const userid = ctx.params.userid;
         const knex = strapi.connections.default;

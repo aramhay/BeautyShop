@@ -3,13 +3,13 @@
 const { sanitizeEntity } = require('strapi-utils');
 const e = (data1, data2) => {
   data1.forEach(cat1 => {
-      cat1.categories.forEach(subCat => {
-          data2.forEach(cat2 => {
-              if (subCat.id === cat2.id) {
-                subCat.subCategories = cat2.sub_categories
-              }
-          })
+    cat1.categories.forEach(subCat => {
+      data2.forEach(cat2 => {
+        if (subCat.id === cat2.id) {
+          subCat.subCategories = cat2.sub_categories
+        }
       })
+    })
   })
   return data1
 }
@@ -25,6 +25,36 @@ module.exports = {
   //     // item.map()
   //     return item
   // },
+
+
+  async getfooter(ctx) {
+    let store = []
+    let result = []
+    let contacts = []
+    let konto = []
+    let menuitem = []
+    let entity4 = await strapi.services['dpab-store'].find()
+    entity4.map((el) => {
+      store.push({ id: el.id, title: el.title, value1: el.value_1, value2: el.value_2 })
+    })
+    let entity3 = await strapi.services['menu-item'].find()
+    entity3.map((el) => {
+      menuitem.push({ id: el.id, name: el.item_name })
+    })
+    let entity2 = await strapi.services['mein-konto'].find()
+    entity2.map((el) => {
+      konto.push({ id: el.id, name: el.name })
+    })
+    let entity = await strapi.services.contact.find()
+    entity.map((el) => {
+      contacts.push({ id: el.id, title: el.title, value: el.value })
+    })
+    result.push(store)
+    result.push(konto)
+    result.push(menuitem)
+    result.push(contacts)
+    return result
+  },
 
   async findMenuItem(ctx) {
     let entities1;

@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-documentation",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "description": "Automatically generates documentation for your api.",
   "strapi": {
     "name": "Documentation",
@@ -35,7 +35,7 @@
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
     "reselect": "^4.0.0",
-    "strapi-helper-plugin": "3.4.4",
+    "strapi-helper-plugin": "3.4.5",
     "swagger-ui-dist": "3.39.0"
   },
   "author": {
@@ -76,5 +76,5 @@
     "npm": ">=6.0.0"
   },
   "license": "SEE LICENSE IN LICENSE",
-  "gitHead": "542786f263688553cddc2e6144cc76da3497bb93"
+  "gitHead": "4f9cc8a22cb1f48e4da7617a99984dc45d0b4a43"
 }
