@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/01/2021 5:15:37 PM"
+    "x-generation-date": "02/04/2021 12:20:18 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -12331,6 +12331,9 @@
               "magazin_presentation": {
                 "type": "string"
               },
+              "uuid": {
+                "type": "uid"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -12558,6 +12561,9 @@
               "regular_customer": {
                 "type": "boolean"
               },
+              "uuid": {
+                "type": "uid"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -12618,6 +12624,9 @@
               },
               "magazin_presentation": {
                 "type": "string"
+              },
+              "uuid": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"
@@ -13112,6 +13121,9 @@
                 },
                 "magazin_presentation": {
                   "type": "string"
+                },
+                "uuid": {
+                  "type": "uid"
                 },
                 "published_at": {
                   "type": "string"
@@ -13633,6 +13645,9 @@
               }
             }
           },
+          "uuid": {
+            "type": "uid"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -13679,6 +13694,9 @@
           },
           "magazin_presentation": {
             "type": "string"
+          },
+          "uuid": {
+            "type": "uid"
           },
           "published_at": {
             "type": "string",
@@ -13792,6 +13810,9 @@
               "regular_customer": {
                 "type": "boolean"
               },
+              "uuid": {
+                "type": "uid"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -13852,6 +13873,9 @@
               },
               "magazin_presentation": {
                 "type": "string"
+              },
+              "uuid": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"
@@ -14083,6 +14107,9 @@
               },
               "magazin_presentation": {
                 "type": "string"
+              },
+              "uuid": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"
@@ -14418,6 +14445,9 @@
                 "regular_customer": {
                   "type": "boolean"
                 },
+                "uuid": {
+                  "type": "uid"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -14604,6 +14634,9 @@
           "regular_customer": {
             "type": "boolean",
             "default": false
+          },
+          "uuid": {
+            "type": "uid"
           }
         }
       },
@@ -14649,6 +14682,9 @@
           "regular_customer": {
             "type": "boolean",
             "default": false
+          },
+          "uuid": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"

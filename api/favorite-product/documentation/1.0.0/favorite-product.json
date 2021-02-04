@@ -192,6 +192,9 @@
               "regular_customer": {
                 "type": "boolean"
               },
+              "uuid": {
+                "type": "uid"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -252,6 +255,9 @@
               },
               "magazin_presentation": {
                 "type": "string"
+              },
+              "uuid": {
+                "type": "uid"
               },
               "published_at": {
                 "type": "string"

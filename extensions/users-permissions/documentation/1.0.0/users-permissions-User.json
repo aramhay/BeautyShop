@@ -1324,6 +1324,9 @@
           "regular_customer": {
             "type": "boolean",
             "default": false
+          },
+          "uuid": {
+            "type": "uid"
           }
         }
       },
@@ -1369,6 +1372,9 @@
           "regular_customer": {
             "type": "boolean",
             "default": false
+          },
+          "uuid": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"

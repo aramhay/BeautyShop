@@ -600,6 +600,9 @@
               "magazin_presentation": {
                 "type": "string"
               },
+              "uuid": {
+                "type": "uid"
+              },
               "published_at": {
                 "type": "string"
               },

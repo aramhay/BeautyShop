@@ -73,6 +73,9 @@
     "regular_customer": {
       "type": "boolean",
       "default": false
+    },
+    "uuid": {
+      "type": "uid"
     }
   }
 }

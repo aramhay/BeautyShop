@@ -64,8 +64,11 @@
       "type": "string"
     },
     "magazin_presentation": {
-      "via": "products",
-      "model": "magazin-presentation"
+      "model": "magazin-presentation",
+      "via": "products"
+    },
+    "uuid": {
+      "type": "uid"
     }
   }
 }

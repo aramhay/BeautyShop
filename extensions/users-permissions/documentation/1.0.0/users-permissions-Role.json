@@ -570,6 +570,9 @@
                 "regular_customer": {
                   "type": "boolean"
                 },
+                "uuid": {
+                  "type": "uid"
+                },
                 "created_by": {
                   "type": "string"
                 },
