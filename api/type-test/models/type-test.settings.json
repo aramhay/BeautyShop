@@ -25,7 +25,6 @@
     },
     "product": {
       "via": "type_test",
-      "columnName": "id",
       "model": "products"
     },
     "images": {

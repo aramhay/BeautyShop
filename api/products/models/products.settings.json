@@ -44,7 +44,6 @@
       "type": "biginteger"
     },
     "type_test": {
-      "columnName": "id",
       "model": "type-test",
       "via": "product"
     },
