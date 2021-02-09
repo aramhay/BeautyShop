@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/menu-items": {
+    "/mein-kontos": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewMein-konto"
               }
             }
           }
         }
       }
     },
-    "/navbaritems": {
+    "/mein-kontos/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "parameters": []
       }
     },
-    "/getfooter": {
+    "/mein-kontos/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,121 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "parameters": [
           {
@@ -548,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "requestBody": {
           "description": "",
@@ -556,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewMein-konto"
               }
             }
           }
@@ -622,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Mein-konto"
         ],
         "parameters": [
           {
@@ -641,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Menu-item": {
+      "Mein-konto": {
         "required": [
           "id"
         ],
@@ -649,34 +535,8 @@
           "id": {
             "type": "string"
           },
-          "item_name": {
+          "title": {
             "type": "string"
-          },
-          "categories": {
-            "required": [
-              "id",
-              "CategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "CategoryName": {
-                "type": "string"
-              },
-              "sub_categories": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -684,12 +544,9 @@
           }
         }
       },
-      "NewMenu-item": {
+      "NewMein-konto": {
         "properties": {
-          "item_name": {
-            "type": "string"
-          },
-          "categories": {
+          "title": {
             "type": "string"
           },
           "published_at": {

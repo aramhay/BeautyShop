@@ -14,6 +14,7 @@ const e = (data1, data2) => {
   return data1
 }
 
+
 module.exports = {
   // async findMenuItem(ctx) {
   //     const knex = strapi.connections.default;
@@ -25,6 +26,35 @@ module.exports = {
   //     // item.map()
   //     return item
   // },
+
+  async getfooter(ctx) {
+    let store = []
+    let result = []
+    let contacts = []
+    let konto = []
+    let menuitem = []
+    let entity4 = await strapi.services['dpab-store'].find()
+    entity4.map((el) => {
+      store.push({ id: el.id, title: el.title, value1: el.value_1, value2: el.value_2 })
+    })
+    let entity3 = await strapi.services['menu-item'].find()
+    entity3.map((el) => {
+      menuitem.push({ id: el.id, name: el.item_name })
+    })
+    let entity2 = await strapi.services['mein-konto'].find()
+    entity2.map((el) => {
+      konto.push({ id: el.id, title: el.title })
+    })
+    let entity = await strapi.services.contact.find()
+    entity.map((el) => {
+      contacts.push({ id: el.id, title: el.title, value: el.value })
+    })
+    result.push(store)
+    result.push(konto)
+    result.push(menuitem)
+    result.push(contacts)
+    return result
+  },
 
   async findMenuItem(ctx) {
     let entities1;

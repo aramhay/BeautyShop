@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/menu-items": {
+    "/contacts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Contact"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewContact"
               }
             }
           }
         }
       }
     },
-    "/navbaritems": {
+    "/contacts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "parameters": []
       }
     },
-    "/getfooter": {
+    "/contacts/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -326,11 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -368,121 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
-        ],
-        "parameters": []
-      }
-    },
-    "/menu-items/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "parameters": [
           {
@@ -506,11 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -548,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "requestBody": {
           "description": "",
@@ -556,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-item"
+                "$ref": "#/components/schemas/NewContact"
               }
             }
           }
@@ -622,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-item"
+          "Contact"
         ],
         "parameters": [
           {
@@ -641,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Menu-item": {
+      "Contact": {
         "required": [
           "id"
         ],
@@ -649,34 +522,11 @@
           "id": {
             "type": "string"
           },
-          "item_name": {
+          "title": {
             "type": "string"
           },
-          "categories": {
-            "required": [
-              "id",
-              "CategoryName"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "CategoryName": {
-                "type": "string"
-              },
-              "sub_categories": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "value": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -684,12 +534,12 @@
           }
         }
       },
-      "NewMenu-item": {
+      "NewContact": {
         "properties": {
-          "item_name": {
+          "title": {
             "type": "string"
           },
-          "categories": {
+          "value": {
             "type": "string"
           },
           "published_at": {
@@ -706,5 +556,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Contact"
+    }
+  ]
 }

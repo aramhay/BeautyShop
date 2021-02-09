@@ -16,6 +16,14 @@
         "policies": []
       }
     },
+    {
+      "method": "GET",
+      "path": "/getfooter",
+      "handler": "menu-item.getfooter",
+      "config": {
+        "policies": []
+      }
+    },
     
     {
       "method": "GET",
