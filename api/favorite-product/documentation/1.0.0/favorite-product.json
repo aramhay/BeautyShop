@@ -223,9 +223,6 @@
               "brand": {
                 "type": "string"
               },
-              "kapseln": {
-                "type": "boolean"
-              },
               "for_sale_count": {
                 "type": "integer"
               },
@@ -251,6 +248,9 @@
                 "type": "string"
               },
               "magazin_presentation": {
+                "type": "string"
+              },
+              "kind": {
                 "type": "string"
               },
               "published_at": {

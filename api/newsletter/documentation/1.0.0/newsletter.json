@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/shopping-baskets": {
+    "/newsletters": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Newsletter"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Shopping-basket"
+          "Newsletter"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Newsletter"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Shopping-basket"
+          "Newsletter"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewShopping-basket"
+                "$ref": "#/components/schemas/NewNewsletter"
               }
             }
           }
         }
       }
     },
-    "/shopping-baskets/{userid}": {
+    "/newsletters/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,11 +306,64 @@
         },
         "summary": "",
         "tags": [
-          "Shopping-basket"
+          "Newsletter"
+        ],
+        "parameters": []
+      }
+    },
+    "/newsletters/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Newsletter"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Newsletter"
         ],
         "parameters": [
           {
-            "name": "userid",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -325,23 +373,17 @@
             }
           }
         ]
-      }
-    },
-    "/shopping-baskets/product_samples": {
-      "post": {
+      },
+      "put": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Update a record",
         "responses": {
           "200": {
             "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Newsletter"
                 }
               }
             }
@@ -379,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Shopping-basket"
+          "Newsletter"
         ],
         "requestBody": {
           "description": "",
@@ -387,142 +429,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/shopping-baskets/gift-wrap": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
+                "$ref": "#/components/schemas/NewNewsletter"
               }
             }
           }
         },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/shopping-basket-gift-wrap/{userid}": {
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
         "parameters": [
           {
-            "name": "userid",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -532,9 +446,7 @@
             }
           }
         ]
-      }
-    },
-    "/shopping-baskets/product_samples/{userid}/{sampleid}": {
+      },
       "delete": {
         "deprecated": false,
         "description": "Delete a record",
@@ -583,96 +495,11 @@
         },
         "summary": "",
         "tags": [
-          "Shopping-basket"
+          "Newsletter"
         ],
         "parameters": [
           {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sampleid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/shopping-baskets/{userid}/{productid}": {
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Shopping-basket"
-        ],
-        "parameters": [
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "productid",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -687,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Shopping-basket": {
+      "Newsletter": {
         "required": [
           "id"
         ],
@@ -695,197 +522,11 @@
           "id": {
             "type": "string"
           },
-          "users_permissions_user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "regular_customer": {
-                "type": "boolean"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "Subject": {
+            "type": "string"
           },
-          "product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clean_product": {
-                "type": "boolean"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "for_sale_count": {
-                "type": "integer"
-              },
-              "unit": {
-                "type": "string"
-              },
-              "discount": {
-                "type": "integer"
-              },
-              "type_test": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "sub_category": {
-                "type": "string"
-              },
-              "menu_item": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "magazin_presentation": {
-                "type": "string"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "gift_wrap": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "price": {
-                "type": "integer"
-              },
-              "Name": {
-                "type": "string"
-              },
-              "Text": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "type_test": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "size": {
-                "type": "integer"
-              },
-              "quantity": {
-                "type": "integer"
-              },
-              "product": {
-                "type": "string"
-              },
-              "images": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "HTML_describe": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -893,21 +534,12 @@
           }
         }
       },
-      "NewShopping-basket": {
+      "NewNewsletter": {
         "properties": {
-          "users_permissions_user": {
+          "Subject": {
             "type": "string"
           },
-          "product": {
-            "type": "string"
-          },
-          "quantity": {
-            "type": "integer"
-          },
-          "gift_wrap": {
-            "type": "string"
-          },
-          "type_test": {
+          "HTML_describe": {
             "type": "string"
           },
           "published_at": {
@@ -924,5 +556,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Newsletter"
+    }
+  ]
 }

@@ -48,8 +48,8 @@
       "default": "center"
     },
     "products": {
-      "collection": "products",
-      "via": "magazin_presentation"
+      "via": "magazin_presentation",
+      "collection": "products"
     }
   }
 }
