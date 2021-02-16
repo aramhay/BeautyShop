@@ -1,8 +1,19 @@
 'use strict';
+// var cron = require('node-cron');
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/models.html#lifecycle-hooks)
- * to customize this model
- */
 
-module.exports = {};
+
+module.exports = {
+    // lifecycles: {
+    //     beforeCreate: async (data) => {
+
+
+    //         // cron.schedule('1,2,4,5 * * * *', () => {
+    //         //     console.log('running');
+    //         // });
+    //         console.log(data, Date.now())
+
+
+    //     }
+    // },
+};

@@ -1039,6 +1039,9 @@
           "kind": {
             "type": "string"
           },
+          "New": {
+            "type": "boolean"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1085,6 +1088,9 @@
           },
           "kind": {
             "type": "string"
+          },
+          "New": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "string",

@@ -65,6 +65,9 @@
     },
     "kind": {
       "type": "string"
+    },
+    "New": {
+      "type": "boolean"
     }
   }
 }

@@ -535,11 +535,17 @@
           "id": {
             "type": "string"
           },
-          "info": {
-            "type": "string"
+          "describe_HTML_CSS": {
+            "type": "string",
+            "default": "<div class=\"page-header-top-grey\"><span class=\"col-lg-12\"></span></div>"
           },
-          "page_headers_style": {
-            "type": "object"
+          "position": {
+            "type": "string",
+            "default": "up",
+            "enum": [
+              "up",
+              "down"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -549,11 +555,17 @@
       },
       "NewPage-header": {
         "properties": {
-          "info": {
-            "type": "string"
+          "describe_HTML_CSS": {
+            "type": "string",
+            "default": "<div class=\"page-header-top-grey\"><span class=\"col-lg-12\"></span></div>"
           },
-          "page_headers_style": {
-            "type": "object"
+          "position": {
+            "type": "string",
+            "default": "up",
+            "enum": [
+              "up",
+              "down"
+            ]
           },
           "published_at": {
             "type": "string",
