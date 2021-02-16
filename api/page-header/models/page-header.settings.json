@@ -13,15 +13,14 @@
   "attributes": {
     "describe_HTML_CSS": {
       "type": "richtext",
-      "default": "<div class=\"page-header-top-grey\"><span class=\"col-lg-12\"></span></div>"
+      "default": "<span> </span>"
     },
     "position": {
       "type": "enumeration",
       "enum": [
-        "up",
-        "down"
-      ],
-      "default": "up"
+        "grey",
+        "black"
+      ]
     }
   }
 }

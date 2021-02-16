@@ -18,4 +18,10 @@ module.exports = {
   // '0 1 * * 1': () => {
   //
   // }
+
+
+  
+    // '/3 * * * * *': () => {
+    //   console.log('3 minute later');
+    // },
 };

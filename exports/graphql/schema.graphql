@@ -2235,8 +2235,8 @@ type deleteNewsletterPayload {
 }
 
 enum ENUM_PAGEHEADER_POSITION {
-  up
-  down
+  grey
+  black
 }
 
 type PageHeader {
